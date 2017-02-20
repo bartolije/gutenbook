@@ -1,0 +1,7 @@
+{% extends 'BackBundle::base.html.twig' %}
+
+{% block %}
+<p>
+{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+</p>
+{% endblock %}

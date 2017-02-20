@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{% block title %}Gutenberg{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset("assets/back/css/font-awesome.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/back/css/style_panel.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/back/css/bootstrap.min.css") }}">
+        <!-- ========== FAVICON & APPLE ICONS ========== -->
+        <link rel="shortcut icon" href="back/images/favicon.ico">
+        <link rel="apple-touch-icon" href="back/images/apple-touch-icon.png">
+
+        <!-- ========== MINIFIED VENDOR CSS ========== -->
+        <link rel="stylesheet" href="{{ asset('back/assets/css/vendor.css') }}">
+
+        <!-- ========== MAIN CSS ========== -->
+        <link rel="stylesheet" href="{{ asset('back/assets/css/main.css') }}">
+
+        <script src="{{ asset('back/assets/js/vendor/modernizr.js') }}"></script>
+    {% endblock %}
+</head>
+<body class="header-shadow light-header">
+
+{% block body %}
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset("back/assets/js/vendor.js") }}"></script>
+    <script src="{{ asset("back/assets/js/plugins.js") }}"></script>
+    <script src="{{ asset("back/assets/js/main.js") }}"></script>
+{% endblock %}
+<!-- Scripts -->
+
+</body>
+</html>
