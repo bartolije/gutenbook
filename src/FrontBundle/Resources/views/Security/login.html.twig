@@ -8,7 +8,7 @@
     {% endif %}
 
     <div class="login-page">
-        <div class="form">
+        <div class="form-login-div">
             <form class="login-form" action="{{ path("fos_user_security_check") }}" method="post">
                 {% if csrf_token %}
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
@@ -23,26 +23,11 @@
 
                 <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                 <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>g
+                <p class="message">Not registered? <a href="http://localhost/gutenbook/web/app_dev.php/register">Create an account</a></p>g
 
             </form>
         </div>
     </div>
 
-
-
-
-
-    <form action="{{ path("fos_user_security_check") }}" method="post">
-
-
-
-
-
-
-        {#<input type="checkbox" id="remember_me" name="_remember_me" value="on" />#}
-        {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
-
-    {#</form>#}
 
 {% endblock %}
