@@ -28,53 +28,45 @@
     <![endif]-->
 </head>
 <body>
-<div id="loader-wrapper">
-    <div id="loader"></div>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
 
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-
-</div>
-<!--WRAPPER START-->
-<div class="wrapper kode-header-class-3">
-    <!--HEADER START-->
-
-    {% include "FrontBundle:UI:menu.html.twig" %}
-
-    <!--HEADER END-->
-
-    {% include "@Front/Default/caroussel.html.twig" %}
-
-    {#{% include "FrontBundle:UI:search.html.twig" %}#}
-
-    <!--CONTENT START-->
-    <div class="kode-content">
-
-    {% block body %}
-    {% endblock %}
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
 
     </div>
 
-    {% include "FrontBundle:UI:footer.html.twig" %}
+    <div class="wrapper kode-header-class-3">
 
-</div>
-<!--WRAPPER END-->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{ asset('assets/front/js/jquery.min.js') }}"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ asset('assets/front/js/modernizr.custom.js') }}"></script>
-<script src="{{ asset('assets/front/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.bxslider.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/bootstrap-slider.js') }}"></script>
-<script src="{{ asset('assets/front/js/waypoints.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.counterup.min.js') }}"></script>
-<script src="{{ asset('assets/front/js/owl.carousel.js') }}"></script>
-<script src="{{ asset('assets/front/js/dl-menu/jquery.dlmenu.js') }}"></script>
-<script src="{{ asset('assets/front/js/googlemap.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/front/lib/hash.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/front/lib/booklet-lib.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquerypp.custom.js') }}"></script>
-<script src="{{ asset('assets/front/js/jquery.bookblock.js') }}"></script>
-<script src="{{ asset('assets/front/js/functions.js') }}"></script>
+        {% include "FrontBundle:UI:menu.html.twig" %}
+
+        {% include "@Front/Default/caroussel.html.twig" %}
+
+        {% include "FrontBundle:UI:search.html.twig" %}
+
+        <div class="kode-content">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        {% include "FrontBundle:UI:footer.html.twig" %}
+
+    </div>
+
+    <script src="{{ asset('assets/front/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/front/js/modernizr.custom.js') }}"></script>
+    <script src="{{ asset('assets/front/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/front/js/jquery.bxslider.min.js') }}"></script>
+    <script src="{{ asset('assets/front/js/bootstrap-slider.js') }}"></script>
+    <script src="{{ asset('assets/front/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/front/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/front/js/owl.carousel.js') }}"></script>
+    <script src="{{ asset('assets/front/js/dl-menu/jquery.dlmenu.js') }}"></script>
+    <script src="{{ asset('assets/front/js/googlemap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/front/lib/hash.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/front/lib/booklet-lib.js') }}"></script>
+    <script src="{{ asset('assets/front/js/jquerypp.custom.js') }}"></script>
+    <script src="{{ asset('assets/front/js/jquery.bookblock.js') }}"></script>
+    <script src="{{ asset('assets/front/js/functions.js') }}"></script>
 </body>
 </html>
