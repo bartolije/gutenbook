@@ -2,11 +2,15 @@
 
 namespace BackBundle\Controller;
 
+use BackBundle\Entity\Book;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * @Route("/admin/")
+ * @Route("/admin")
  */
 class DefaultController extends Controller
 {
@@ -17,4 +21,8 @@ class DefaultController extends Controller
     {
         return $this->render('BackBundle:Default:index.html.twig');
     }
+
+
+
+
 }

@@ -181,12 +181,13 @@ header{
 }
 .logo{
 	float:left;
+	width:50%;
+	height: auto;
 }
-
 .top-strip{
 	float:left;
 	width:100%;
-	padding:10px 0px;
+	padding:10px 0px;''
 }
 .top-strip .site-info{
 	float:right;
@@ -219,12 +220,27 @@ header{
 .kode-navigation{
 	float:right;
 }
+.form{
+	position: relative;
+	display:inline-block;
+
+}
+.searchBar{
+	display: inline-block;
+	position: relative;
+	margin-top: 10%;
+	border-color: #d58512;
+	z-index:5;
+	background-image: url("../../../../web/assets/img/loupe.png");
+	background-repeat: no-repeat;
+	background-position: 5px 10px;
+}
 .kode-navigation ul{
 	float:left;
 	width:100%;
 	list-style:none;
 	margin:10px 0px;
-	padding:0px;
+	padding:5px;
 }
 .kode-navigation ul li{
 	float:left;
@@ -433,9 +449,9 @@ header{
 .kode-banner .kode-caption-2{
 	position:absolute;
 	width:50%;
-	left:50%;
+	left:60%;
 	margin-left:-41%;
-	top:25%;
+	top:35%;
 	z-index:100;
 }
 .kode-banner .kode-caption-3 .kode-text{
@@ -446,7 +462,7 @@ header{
 	width:280px;
 }
 .kode-header-class-3 .kode-banner .kode-caption-2{
-	top:35%;
+	top:45%;
 }
 .kode-banner .kode-caption-2 h5, .kode-banner .kode-caption-2 h2{
 	color:#fff;
@@ -659,7 +675,7 @@ header{
 }
 .best-seller-pro{
 	float:left;
-	width:100%;
+	width:350px;
 	padding:30px;
 	background-color:#fff;
 	text-align:center;
@@ -667,16 +683,20 @@ header{
 	overflow:hidden;
 	margin-bottom:30px;
 	border:solid 1px #f0f0f0;
+	height:550px;
 }
 .best-seller-pro figure{
 	float:left;
 	width:100%;
 	margin-bottom:20px;
 }
+
 .best-seller-pro figure img{
 	float:left;
-	width:100%;
+	width: 100%;
+	height:400px;
 }
+
 .best-seller-pro h3{
 	font-size:18px;
 	font-weight:normal;
@@ -1535,7 +1555,7 @@ footer{
 .kode-inner-banner{
 	float:left;
 	width:100%;
-	background-image:url(images/inner-banner.png);
+	background-image:url(../../front/images/inner-banner.png);
 	background-size:cover;
 
 }
@@ -1720,8 +1740,8 @@ footer{
 }
 .social-icon ul li a:hover{
 	color:#fff;
-	background-color:#434343;
-	border-color:#434343;
+	background-color:#000;
+	border-color:#000;
 }
 
 .kode-author-2 .kode-caption{
@@ -4088,7 +4108,7 @@ section.lib-call-to-action .container{
 }
 .reg-btn:hover{
 	background-color:#fff;
-	color:#333;
+	color:#777;
 }
 /*
 =============================================
@@ -4810,7 +4830,7 @@ section.lib-call-to-action .container{
 	padding: 15px;
 	background-color: #f4f4f4;
 	float: left;
-	width: 100%;
+	width: 80%;
 }
 .lib-book-detail .kode-text{
 	float: left;
