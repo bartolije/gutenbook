@@ -349,7 +349,7 @@ jQuery(document).ready(function($){
 	if($('#contactform').length) {
 
 		var $form = $('#contactform'),
-		$loader = '<img src="images/ajax_loading.gif" alt="Loading..." />';
+		$loader = '<images src="images/ajax_loading.gif" alt="Loading..." />';
 		$form.append('<div class="hidden-me" id="contact_form_responce">');
 
 		var $response = $('#contact_form_responce');
@@ -370,7 +370,7 @@ jQuery(document).ready(function($){
 				response = $.parseJSON(response);
 				
 				$(".incorrect-data").removeClass("incorrect-data");
-				$response.find('img').remove();
+				$response.find('image').remove();
 
 				if(response.is_errors){
 
