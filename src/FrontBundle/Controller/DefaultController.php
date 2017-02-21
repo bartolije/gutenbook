@@ -31,24 +31,24 @@ class DefaultController extends Controller
     }
 
 
-//    /**
-//     * @Template()
-//     * @Route("/read/{token}", name="read")
-//     * @param Request $request
-//     * @param $token
-//     * @return array
-//     */
-//    public function readAction(Request $request, $token)
-//    {
-//        $repository = $this ->getDoctrine() ->getManager() ->getRepository('AppBundle:Book');
-//        $book = $repository->findOneBy(array('token' => $token));
-//
-//        if(!($book instanceof Book))
-//        {
-//            throw new NotFoundHttpException();
-//        }
-//
-//        return array('book' => $book);
-//    }
+    /**
+     * @Template()
+     * @Route("/read/{token}", name="read_book")
+     * @param Request $request
+     * @param $token
+     * @return array
+     */
+    public function readAction(Request $request, $token)
+    {
+        $repository = $this ->getDoctrine() ->getManager() ->getRepository('AppBundle:Book');
+        $book = $repository->findOneBy(array('token' => $token));
+
+        if(!($book instanceof Book))
+        {
+            throw new NotFoundHttpException();
+        }
+
+        return array('book' => $book);
+    }
 
 }
