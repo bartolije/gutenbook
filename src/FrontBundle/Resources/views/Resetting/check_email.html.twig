@@ -1,7 +1,13 @@
 {% extends 'FrontBundle::base.html.twig' %}
 {% trans_default_domain 'FOSUserBundle' %}
 {% block body %}
-<p>
-{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
-</p>
+        <div class="reset-page">
+                <div class="kode-navigation">
+                        <div class="form-reset">
+                                <p>
+                                {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+                                </p>
+                        </div>
+                </div>
+        </div>
 {% endblock %}
