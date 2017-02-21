@@ -1,12 +1,6 @@
-{% extends 'BackBundle::base.html.twig' %}
-
+{% extends 'FrontBundle::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
 {% block body %}
-    <div class="wrapper kode-header-class-3">
-        <!--BANNER START-->
-        <div class="kode-banner">
-            <img src="{{ asset("assets/front/images/banner.png") }}" alt="">
-        </div>
-    </div>
 <p>
 {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
 </p>

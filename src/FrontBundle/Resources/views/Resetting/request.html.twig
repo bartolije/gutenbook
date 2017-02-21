@@ -1,18 +1,13 @@
-{% extends 'BackBundle::base.html.twig' %}
+{% extends 'FrontBundle::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
 {% block body %}
-<div class="wrapper kode-header-class-3">
-    <!--BANNER START-->
-    <div class="kode-banner">
-        <img src="{{ asset("assets/front/images/banner.png") }}" alt="">
-    </div>
-</div>
-    <section class="kode-membership">
-        <div class="container">
+<div class="login-page">
+    <div class="form">
             <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
                 <div class="kode-navigation">
                     <ul>
                         <li>
-                            <label for="username">{{ 'resetting.request.username'|trans }}></label>
+                            <label for="username">{{ 'resetting.request.username'|trans }}</label>
                         </li>
                     </ul>
                     <ul>
@@ -28,6 +23,6 @@
                 </div>
             </form>
         </div>
-    </section>
+    </div>
 
 {% endblock %}

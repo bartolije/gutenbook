@@ -6762,14 +6762,3 @@ nav .pagination{margin:0px 0px -7px;}
 	width:100%;
 }
 
-/*
-================================================
-			RESETTING START
-================================================
-*/
-
-#username{
-	background-image: url("../images/icon-email.png");
-	background-repeat: no-repeat;
-	background-position: 5px 20px;
-}
