@@ -57,7 +57,7 @@ abstract class BaseManager
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->persistAndFlush($entity);
-            return new RedirectResponse($this->router->generate($path));
+            return $this->redirect($path);
         }
         return array('form' => $form->createView());
     }
