@@ -231,7 +231,7 @@ header{
 	margin-top: 10%;
 	border-color: #d58512;
 	z-index:5;
-	background-image: url("../../../../web/assets/img/loupe.png");
+	background-image: url("../images/loupe.png");
 	background-repeat: no-repeat;
 	background-position: 5px 10px;
 }
@@ -6760,4 +6760,16 @@ nav .pagination{margin:0px 0px -7px;}
 	padding:50px 0px;
 	float:left;
 	width:100%;
+}
+
+/*
+================================================
+			RESETTING START
+================================================
+*/
+
+#username{
+	background-image: url("../images/icon-email.png");
+	background-repeat: no-repeat;
+	background-position: 5px 20px;
 }

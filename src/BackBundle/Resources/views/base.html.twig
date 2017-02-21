@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -62,7 +60,7 @@
                         <div class="col-md-2">
                             <!--LOGO START-->
                             <div class="logo">
-                                <a href="#"><img src="{{ asset("assets/img/LOGO-1.png") }}" alt=""></a>
+                                <a href="#"><img src="{{ asset("assets/front/images/LOGO-1.png") }}" alt=""></a>
                             </div>
                             <!--LOGO END-->
                         </div>
@@ -147,6 +145,26 @@
     <!--HEADER END-->
 {% endblock %}
 {% block body %}
+{% endblock %}
+{% block footer %}
+    <footer class="footer-2">
+        <div class="container">
+            <div class="lib-copyrights">
+                <p>Copyrights © 2017-18 Gutenbook. All rights reserved</p>
+                <div class="social-icon">
+                    <ul>
+                        <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Tumblr"><i class="fa fa-tumblr"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="back-to-top">
+                <a href="#home"><i class="fa fa-angle-up"></i></a>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
 {% block javascript %}
     <!--[if lt IE 9]>
