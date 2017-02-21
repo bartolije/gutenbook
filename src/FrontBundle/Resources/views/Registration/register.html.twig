@@ -1,13 +1,54 @@
-{% extends 'BackBundle::base.html.twig' %}
+{% extends 'FrontBundle::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
 
 {% block body%}
 
     {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
+    {# {{ form_widget(form) }} #}
+    <!--BECOME A MEMBER START-->
+    <section class="kode-membership">
+        <div class="container">
+            <!--SECTION HEADING START-->
+            <div class="section-heading-1 dark-sec">
+                <h2>Become a member</h2>
+                <p>Submit your books idea and you can become an Author.</p>
+                <div class="kode-icon"><i class="fa fa-book"></i></div>
+            </div>
+            <!--SECTION HEADING END-->
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-container">
+                        <i class="fa fa-user"></i>
+                        {{ form_widget(form.username) }}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-container">
+                        <i class="fa fa-envelope-o"></i>
+                        {{ form_widget(form.email) }}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-container">
+                        <i class="fa fa-key"></i>
+                        {{ form_widget(form.plainPassword.first) }}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="input-container">
+                        <i class="fa fa-key"></i>
+                        {{ form_widget(form.plainPassword.second) }}
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    {{ form_widget(form) }}
+                    <input class="reg-btn" type="submit" value="{{ 'Enregister'|trans }}" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--BECOME A MEMBER END-->
+    {{ form_rest(form) }}
+
     {{ form_end(form) }}
-
-
 {% endblock %}
