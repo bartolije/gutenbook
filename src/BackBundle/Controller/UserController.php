@@ -8,18 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/user")
+ * @Route("/admin/user")
  */
 class UserController extends Controller
 {
-    /**
-     * @Template()
-     * @Route("/", name="user_index")
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function indexAction()
-    {
-        return $this->render('@App/User/index.html.twig');
-    }
+
 
 }
