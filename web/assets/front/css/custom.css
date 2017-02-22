@@ -276,3 +276,39 @@
 .container .info span .fa {
     color: #EF3B3A;
 }
+/*
+==========================================
+				MENU CSS
+==========================================
+*/
+.kode-connexion, .kode-connexion ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.kode-connexion{
+    float:right;
+}
+.kode-connexion li{
+    display:inline-block;
+    position:relative;
+}
+.kode-connexion ul {
+    position: absolute;
+    z-index: 2;
+    max-height:0;
+    left:0;
+    right: 0;
+    overflow:hidden;
+    -moz-transition: .8s all .3s;
+    -webkit-transition: .8s all .3s;
+    transition: .8s all .3s;
+}
+.kode-connexion li:hover ul {
+    max-height:15em;
+    text-align:center;
+}
+.kode-connexion:hover, .kode-connexion ul li {
+    background: orange;
+}
