@@ -13,6 +13,7 @@
                 {% if csrf_token %}
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                 {% endif %}
+
                 <label for="username">{{ 'security.login.username'|trans }}</label>
                 <input type="text" id="username" name="_username"  value="{{ last_username }}" required="required" />
 
@@ -20,8 +21,7 @@
                 <input type="password" id="password" name="_password"  required="required" />
 
                 <button type="submit" id="_submit" name="_submit" >{{ 'security.login.submit'|trans }}</button>
-
-                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked"/>
                 <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
                 <p class="message">Not registered? <a href="{{ 'fos_user_registration_register' }}">Create an account</a></p>
 
