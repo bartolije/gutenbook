@@ -2,12 +2,10 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% block body %}
         <div class="reset-page">
-                <div class="kode-navigation">
-                        <div class="form-reset">
-                                <p>
-                                {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
-                                </p>
-                        </div>
-                </div>
+              <div class="form-reset">
+                    <p>
+                        {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+                    </p>
+              </div>
         </div>
 {% endblock %}
