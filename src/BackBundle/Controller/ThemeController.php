@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/theme")
+ * @Route("/admin/theme")
  */
 class ThemeController extends Controller
 {

@@ -6519,6 +6519,7 @@ section .kd-tab-2{margin-bottom:30px;float:left;width:100%;}
 .kode-author-detail-2 .kode-thumb{
 	float:left;
 	width:460px;
+	border-radius: 50%;
 }
 .kode-author-detail-2 .kode-text{
 	padding:0px 0px 0px 490px;

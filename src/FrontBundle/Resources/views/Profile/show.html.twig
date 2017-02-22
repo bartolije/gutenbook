@@ -2,13 +2,227 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 
-{% block fos_user_content %}
+{% block body %}
 
-    <div class="fos_user_user_show">
-        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-    </div>
+    <!--AUTHOR DETAIL SECTION START-->
+    <section class="kode-author-detail-2">
+        <div class="container">
+            <div class="kode-thumb">
+                <img src="{{ asset("assets/front/images/author-detail.jpg") }}" alt="">
+            </div>
+            <div class="kode-text">
+                <h2>{{ user.username }}</h2>
+                <div class="contact-box">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table>
+
+                                <tr>
+                                    <td><i class="fa fa-envelope-o"></i></td>
+                                    <td>{{ 'profile.show.email'|trans }}:</td>
+                                    <td> {{ app.user.email }}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            </div>
+        </div>
+    </section>
+    <!--AUTHOR DETAIL SECTION END-->
+    <!--RECENT RELEASE SECTION START-->
+    <section class="recent-release">
+        <div class="container">
+            <div class="section-heading-1">
+                <h2>Livres favoris</h2>
+                <div class="kode-icon"><i class="fa fa-book"></i></div>
+            </div>
+            <div class="owl-release owl-theme">
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release-2.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release-3.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="i{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="book-released">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="{{ asset("assets/front/images/new-release.png") }}" alt=""></a>
+                            <div class="cart-btns">
+                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="kode-text">
+                            <h3>Donec eu libero sit</h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--RECENT RELEASE SECTION END-->
 
 
 
-{% endblock fos_user_content %}
+
+{% endblock body %}
