@@ -6,72 +6,78 @@
                     <div class="col-md-2">
                         <!--LOGO START-->
                         <div class="logo">
-                            <a href="#"><img src="{{ asset("assets/front/images/LOGO-1.png") }}" alt=""></a>
+                            <a href="{{ path('front_default_index') }}"><img src="{{ asset("assets/front/images/logo-1.png") }}" alt=""></a>
                         </div>
                         <!--LOGO END-->
                     </div>
                     <div class="col-md-10">
-                        <div class="top-strip">
-                            <div class="social-icon">
+                        <div class="menu">
+                            <div class="kode-navigation">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="{{ path('front_default_index') }}">Home</a></li>
+
+                                    <li><a href="{{ path('front_default_index') }}">About Us</a></li>
+                                    <li><a href="{{ path('front_default_index') }}">Our Books</a>
+                                        <ul>
+                                            <li><a href="{{ path('front_default_index') }}">Book With Sidebar</a></li>
+                                            <li><a href="{{ path('front_default_index') }}">Book Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ path('front_default_index') }}">Blog</a>
+                                        <ul>
+                                            <li><a href="{{ path('front_default_index') }}">Blog 2 Column</a></li>
+                                            <li><a href="{{ path('front_default_index') }}">Blog Full</a></li>
+                                            <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    {% if is_granted('ROLE_USER') %}
+                                    <li><a href="#">{{ app.user.username }}</a>
+                                        <ul>
+                                            {% if is_granted('ROLE_ADMIN') %}
+                                                <li><a href="{{ path('book_index') }}">Manage Books</a></li>
+                                                <li><a href="{{ path('theme_index') }}">Manage Themes</a></li>
+                                                <li><a href="{{ path('category_index') }}">Manage Categories</a></li>
+                                            {% endif %}
+                                            <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
+                                            <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    {% else %}
+                                    <li><a href="{{ path('fos_user_security_login') }}">Login</a>
+                                        <ul>
+                                            <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                                            <li><a href="{{ path('fos_user_registration_register') }}">Register</a></li>
+                                        </ul>
+                                    </li>
+                                    {% endif %}
+                                    <li class="search-form">
+                                        <form action="" class="form">
+                                            <input class="searchBar" placeholder="Search..."/>
+                                        </form>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="kode-navigation">
-                            <ul>
-                                <li><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="index-1.html">Home page 1</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="books.html">Our Books</a>
-                                    <ul>
-                                        <li><a href="books3-sidebar.html">Book With Sidebar</a></li>
-                                        <li><a href="books-detail.html">Book Detail</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog.html">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-2column.html">Blog 2 Column</a></li>
-                                        <li><a href="blog-full.html">Blog Full</a></li>
-                                        <li><a href="blog-detail.html">Blog Detail</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <form action="" class="form">
-                                        <input class="searchBar" placeholder="Search..."/>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-
-
                         <div id="kode-responsive-navigation" class="dl-menuwrapper">
                             <button class="dl-trigger">Open Menu</button>
                             <ul class="dl-menu">
-                                <li class="menu-item kode-parent-menu"><a href="index.html">Home</a>
+                                <li class="menu-item kode-parent-menu"><a href="{{ path('front_default_index') }}">Home</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="index-1.html">Home page 1</a></li>
+                                        <li><a href="{{ path('front_default_index') }}">Home page 1</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li class="menu-item kode-parent-menu"><a href="books.html">Our Books</a>
+                                <li><a href="{{ path('front_default_index') }}">About Us</a></li>
+                                <li class="menu-item kode-parent-menu"><a href="{{ path('front_default_index') }}">Our Books</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="books3-sidebar.html">Book With Sidebar</a></li>
-                                        <li><a href="books-detail.html">Book Detail</a></li>
+                                        <li><a href="{{ path('front_default_index') }}">Book With Sidebar</a></li>
+                                        <li><a href="{{ path('front_default_index') }}">Book Detail</a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item kode-parent-menu"><a href="blog.html">Blog</a>
+                                <li class="menu-item kode-parent-menu"><a href="{{ path('front_default_index') }}">Blog</a>
                                     <ul class="dl-submenu">
-                                        <li><a href="blog-2column.html">Blog 2 Column</a></li>
-                                        <li><a href="blog-full.html">Blog Full</a></li>
-                                        <li><a href="blog-detail.html">Blog Detail</a></li>
+                                        <li><a href="{{ path('front_default_index') }}">Blog 2 Column</a></li>
+                                        <li><a href="{{ path('front_default_index') }}">Blog Full</a></li>
+                                        <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
                                     </ul>
                                 </li>
                                 <li>

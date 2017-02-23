@@ -25,6 +25,7 @@
                 <input type="password" id="password" name="_password"  required="required" />
 
                 <button type="submit" id="_submit" name="_submit" >{{ 'security.login.submit'|trans }}</button>
+<<<<<<< HEAD
                 {#<input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked"/>#}
                 <label>{{ 'security.login.remember_me'|trans }}</label>
 
@@ -38,6 +39,11 @@
 
                 <p class="message">Not registered? <a href="{{ path('fos_user_registration_register') }}">Create an account</a></p>
                 <p class="message">Forgot password? <a href="{{ path('fos_user_resetting_request') }}">Reset</a></p>
+=======
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked"/>
+                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                <p class="message">Not registered? <a href="{{ path('fos_user_registration_register') }}">Create an account</a></p>
+>>>>>>> 8e3f78ca3c019b5df61bd8b44e52f29b76d8b182
 
             </form>
         </div>
