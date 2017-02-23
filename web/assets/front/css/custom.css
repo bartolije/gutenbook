@@ -241,5 +241,7 @@
 .menu{
 
 }
-.SearchForm{
+.search-form{
+    margin-right: 10px !important;
+    float: right !important;
 }
