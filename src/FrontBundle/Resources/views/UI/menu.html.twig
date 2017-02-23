@@ -11,64 +11,47 @@
                         <!--LOGO END-->
                     </div>
                     <div class="col-md-10">
-                        <div class="top-strip">
-                            <ul class="kode-connexion">
-                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            <li>Connecté en tant que {{ app.user.username }}
-                                <ul>
-                                    <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
-                                </ul>
-                            </li>
-                            {% else %}
-                            <li><a href="{{ path('fos_user_security_login') }}">Connexion</a>
-                                <ul>
-                                    <li><a href="{{ path('fos_user_registration_register') }}">Inscription</a></li>
-                                </ul>
-                            </li>
-                            {% endif %}
-                            </ul>
-                        </div>
                         <div class="menu">
-                        <div class="kode-navigation">
-                            <ul>
-                                <li><a href="{{ path('front_default_index') }}">Home</a></li>
+                            <div class="kode-navigation">
+                                <ul>
+                                    <li><a href="{{ path('front_default_index') }}">Home</a></li>
 
-                                <li><a href="{{ path('front_default_index') }}">About Us</a></li>
-                                <li><a href="{{ path('front_default_index') }}">Our Books</a>
-                                    <ul>
-                                        <li><a href="{{ path('front_default_index') }}">Book With Sidebar</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">Book Detail</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="{{ path('front_default_index') }}">Blog</a>
-                                    <ul>
-                                        <li><a href="{{ path('front_default_index') }}">Blog 2 Column</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">Blog Full</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
-                                    </ul>
-                                </li>
-                                {% if is_granted('ROLE_USER') %}
-                                <li><a href="#">{{ app.user.username }}</a>
-                                    <ul>
-                                        <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
-                                        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
-                                    </ul>
-                                </li>
-                                {% else %}
-                                <li><a href="{{ path('fos_user_security_login') }}">Login</a>
-                                    <ul>
-                                        <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
-                                        <li><a href="{{ path('fos_user_registration_register') }}">Register</a></li>
-                                    </ul>
-                                </li>
-                                {% endif %}
-                                <li class="search-form">
-                                    <form action="" class="form">
-                                        <input class="searchBar" placeholder="Search..."/>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+                                    <li><a href="{{ path('front_default_index') }}">About Us</a></li>
+                                    <li><a href="{{ path('front_default_index') }}">Our Books</a>
+                                        <ul>
+                                            <li><a href="{{ path('front_default_index') }}">Book With Sidebar</a></li>
+                                            <li><a href="{{ path('front_default_index') }}">Book Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ path('front_default_index') }}">Blog</a>
+                                        <ul>
+                                            <li><a href="{{ path('front_default_index') }}">Blog 2 Column</a></li>
+                                            <li><a href="{{ path('front_default_index') }}">Blog Full</a></li>
+                                            <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    {% if is_granted('ROLE_USER') %}
+                                    <li><a href="#">{{ app.user.username }}</a>
+                                        <ul>
+                                            <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
+                                            <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    {% else %}
+                                    <li><a href="{{ path('fos_user_security_login') }}">Login</a>
+                                        <ul>
+                                            <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                                            <li><a href="{{ path('fos_user_registration_register') }}">Register</a></li>
+                                        </ul>
+                                    </li>
+                                    {% endif %}
+                                    <li class="search-form">
+                                        <form action="" class="form">
+                                            <input class="searchBar" placeholder="Search..."/>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div id="kode-responsive-navigation" class="dl-menuwrapper">
                             <button class="dl-trigger">Open Menu</button>
