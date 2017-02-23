@@ -41,7 +41,7 @@
 
         {% include "@Front/Default/caroussel.html.twig" %}
 
-        {% include "FrontBundle:UI:search.html.twig" %}
+        {{ render(controller( 'FrontBundle:Default:search' )) }}
 
         <div class="kode-content">
             {% block body %}
