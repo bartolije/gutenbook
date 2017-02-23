@@ -33,6 +33,11 @@
                                     {% if is_granted('ROLE_USER') %}
                                     <li><a href="#">{{ app.user.username }}</a>
                                         <ul>
+                                            {% if is_granted('ROLE_ADMIN') %}
+                                                <li><a href="{{ path('book_index') }}">Manage Books</a></li>
+                                                <li><a href="{{ path('theme_index') }}">Manage Themes</a></li>
+                                                <li><a href="{{ path('category_index') }}">Manage Categories</a></li>
+                                            {% endif %}
                                             <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
                                             <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                                         </ul>
