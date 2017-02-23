@@ -220,11 +220,6 @@ header{
 .kode-navigation{
 	float:right;
 }
-.form{
-	position: relative;
-	display:inline-block;
-
-}
 .searchBar{
 	display: inline-block;
 	position: relative;

@@ -227,9 +227,9 @@
     left:0;
     right: 0;
     overflow:hidden;
-    -moz-transition: .8s all .3s;
-    -webkit-transition: .8s all .3s;
-    transition: .8s all .3s;
+    -moz-transition: .6s all .2s;
+    -webkit-transition: .6s all .2s;
+    transition: .6s all .2s;
 }
 .kode-connexion li:hover ul {
     max-height:15em;
@@ -237,4 +237,9 @@
 }
 .kode-connexion:hover, .kode-connexion ul li {
     background: orange;
+}
+.menu{
+
+}
+.SearchForm{
 }

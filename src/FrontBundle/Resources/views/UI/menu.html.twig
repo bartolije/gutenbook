@@ -6,7 +6,7 @@
                     <div class="col-md-2">
                         <!--LOGO START-->
                         <div class="logo">
-                            <a href="#"><img src="{{ asset("assets/front/images/LOGO-1.png") }}" alt=""></a>
+                            <a href="{{ path('front_default_index') }}"><img src="{{ asset("assets/front/images/LOGO-1.png") }}" alt=""></a>
                         </div>
                         <!--LOGO END-->
                     </div>
@@ -28,6 +28,7 @@
                             {% endif %}
                             </ul>
                         </div>
+                        <div class="menu">
                         <div class="kode-navigation">
                             <ul>
                                 <li><a href="index.html">Home</a>
@@ -50,23 +51,14 @@
                                         <li><a href="blog-detail.html">Blog Detail</a></li>
                                     </ul>
                                 </li>
-                                <li>
-                            </ul>
-                        </div>
-                        <div class="kode-navigation ">
-                            <ul>
-                                <li>
+                                <li class="SearchForm">
                                     <form action="" class="form">
                                         <input class="searchBar" placeholder="Search..."/>
                                     </form>
                                 </li>
                             </ul>
                         </div>
-
-
-
-
-
+                        </div>
                         <div id="kode-responsive-navigation" class="dl-menuwrapper">
                             <button class="dl-trigger">Open Menu</button>
                             <ul class="dl-menu">
