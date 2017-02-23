@@ -12,14 +12,21 @@
                     </div>
                     <div class="col-md-10">
                         <div class="top-strip">
-                            <div class="social-icon">
+                            <ul class="kode-connexion">
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li>Connecté en tant que {{ app.user.username }}
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
                                 </ul>
-                            </div>
+                            </li>
+                            {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">Connexion</a>
+                                <ul>
+                                    <li><a href="{{ path('fos_user_registration_register') }}">Inscription</a></li>
+                                </ul>
+                            </li>
+                            {% endif %}
+                            </ul>
                         </div>
                         <div class="kode-navigation">
                             <ul>
@@ -44,12 +51,20 @@
                                     </ul>
                                 </li>
                                 <li>
+                            </ul>
+                        </div>
+                        <div class="kode-navigation ">
+                            <ul>
+                                <li>
                                     <form action="" class="form">
                                         <input class="searchBar" placeholder="Search..."/>
                                     </form>
                                 </li>
                             </ul>
                         </div>
+
+
+
 
 
                         <div id="kode-responsive-navigation" class="dl-menuwrapper">
