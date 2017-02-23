@@ -4,7 +4,7 @@ fos_user:
 back:
     resource: "@BackBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /admin
 
 front:
     resource: "@FrontBundle/Controller/"
