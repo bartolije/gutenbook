@@ -15,19 +15,17 @@ class BookRepository extends EntityRepository
     {
         $query = $this->createQueryBuilder('b')
             ->where('b.title LIKE :title')
-            ->setParameter('title', '%'.$title.'%');
+            ->setParameter('title', '%' . $title . '%');
 
-            if($category instanceof Category)
-            {
-                $query->andWhere('b.categories = :category')
+        if ($category instanceof Category) {
+            $query->andWhere('b.categories = :category')
                 ->setParameter('category', $category);
-            }
+        }
 
-            if($theme instanceof Theme)
-            {
-                $query->andWhere('b.themes = :theme')
+        if ($theme instanceof Theme) {
+            $query->andWhere('b.themes = :theme')
                 ->setParameter('theme', $theme);
-            }
+        }
 
         return $query->getQuery()->getResult();
     }
