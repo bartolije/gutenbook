@@ -47,13 +47,21 @@
                                         <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ path('front_default_index') }}">connexion</a>
+                                {% if is_granted('ROLE_USER') %}
+                                <li><a href="#">{{ app.user.username }}</a>
                                     <ul>
-                                        <li><a href="{{ path('front_default_index') }}">login</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">register</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
+                                        <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
+                                        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                                     </ul>
                                 </li>
+                                {% else %}
+                                <li><a href="{{ path('fos_user_security_login') }}">Login</a>
+                                    <ul>
+                                        <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                                        <li><a href="{{ path('fos_user_registration_register') }}">Register</a></li>
+                                    </ul>
+                                </li>
+                                {% endif %}
                                 <li class="search-form">
                                     <form action="" class="form">
                                         <input class="searchBar" placeholder="Search..."/>
