@@ -1,4 +1,4 @@
-{% extends 'BackBundle::base.html.twig' %}
+{% extends 'FrontBundle::base.html.twig' %}
 
 {% block body %}
 
@@ -14,7 +14,10 @@
             <tr>
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
-                <td><a href="{{ path('category_edit', { 'id': category.id }) }}">Edit</a> /<a href="{{ path('category_delete', { 'id': category.id }) }}">Delete</a> </td>
+                <td>
+                    <a href="{{ path('category_edit', { 'id': category.id }) }}"><i class="fa fa-pencil"></i></a></li></a> /
+                    <a href="{{ path('category_delete', { 'id': category.id }) }}"><i class="fa fa-window-close"></i></a>
+                </td>
             </tr>
 
         {% endfor %}
