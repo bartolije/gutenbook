@@ -1,5 +1,37 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+
+
+
+
+
+/*
+==========================================
+				CUSTOMIZED PAGE CSS
+==========================================
+*/
+
+body
+{
+    background-color: #fcfcfc;
+}
+.center-div
+{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+
+
+
 /*
 ==========================================
 				LOGIN CSS
