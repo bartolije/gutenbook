@@ -1,4 +1,26 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/*
+==========================================
+				CUSTOMIZED PAGE CSS
+==========================================
+*/
+body
+{
+    background-color: #fcfcfc;
+}
+.center-div
+{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    background-color: #ccc;
+    border-radius: 3px;
+}
 
 /*
 ==========================================
@@ -318,7 +340,6 @@
 
 .table-category tr th{
     background-color: orange;
-
 }
 
 /*
@@ -332,11 +353,13 @@
     margin: auto;
     position: relative;
     z-index: 1;
-    background: orange;
+    background: #fff;
     max-width: 360px;
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
+}
+.book_box{
+    text-align:center;
 }

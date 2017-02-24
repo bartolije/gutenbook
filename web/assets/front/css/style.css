@@ -226,7 +226,8 @@ header{
 	margin-top: 10%;
 	border-color: #d58512;
 	z-index:5;
-	background-image: url("../images/loupe.png");
+	height: 50px;
+	background-image: url("../images/loupe_2.png");
 	background-repeat: no-repeat;
 	background-position: 5px 10px;
 }
