@@ -26,6 +26,20 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/results", name="search_results")
+     * @param Request $request
+     * @param $books
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function resultsAction(Request $request, $books = null)
+    {
+
+        $books = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book')->findAll();
+
+        return $this->render('FrontBundle:Default:results.html.twig', array('books' => $books));
+    }
+
+    /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */

@@ -291,10 +291,52 @@
 .kode-connexion:hover, .kode-connexion ul li {
     background: orange;
 }
-.menu{
-
-}
 .search-form{
     margin-right: 10px !important;
     float: right !important;
+}
+
+/*
+==========================================
+				ADMIN TABLE CSS
+==========================================
+*/
+
+.new_button{
+    color:black;
+    font-weight: bold;
+
+}
+
+.table-category tr td, .table-category tr th{
+    text-align: center;
+    border-style:solid;
+    border-color:orange;
+    border-width:0px 0px 1px 0px;
+    color:black
+}
+
+.table-category tr th{
+    background-color: orange;
+
+}
+
+/*
+==========================================
+				ADMIN NEW / EDIT CSS
+==========================================
+*/
+.new_edit {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background: orange;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
 }
