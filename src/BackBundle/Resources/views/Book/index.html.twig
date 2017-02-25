@@ -1,0 +1,48 @@
+{% extends 'BackBundle::base.html.twig' %}
+
+{% block body %}
+
+            <table class="table">
+
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Editor</th>
+                    <th>Categories</th>
+                    <th>Themes</th>
+                    <th>Published at</th>
+                    <th>Summary</th>
+                    <th>Edit/Delete</th>
+                </tr>
+
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.editor }}</td>
+                        <td>
+                            {% if not book.categories.empty %}
+                                {% for category in book.categories %}
+                                    {{ category.name }}{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if not book.themes.empty %}
+                                {% for theme in book.themes %}
+                                    {{ theme.name }}{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        </td>
+                        <td>{{ book.publishedAt | date }}</td>
+                        <td>{{ book.summary }}</td>
+                        <td><a href="{{ path('book_edit', { 'id': book.id }) }}">Edit</a> / <a
+                                    href="{{ path('book_delete', { 'id': book.id }) }}">Delete</a></td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+
+{% endblock %}

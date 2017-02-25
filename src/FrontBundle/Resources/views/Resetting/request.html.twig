@@ -1,0 +1,15 @@
+{% extends 'FrontBundle::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block body %}
+    <div class="reset-page">
+          <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                    <div class="form-reset">
+                        <form class="">
+                            <label for="username">{{ 'resetting.request.username'|trans }}</label>
+                            <input type="text" placeholder="username" id="username" name="username" required="required" />
+                            <button type="submit" >{{ 'resetting.request.submit'|trans }}</button>
+                        </form>
+                    </div>
+          </form>
+    </div>
+{% endblock %}

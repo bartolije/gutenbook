@@ -6,11 +6,7 @@
     <div class="container">
     <div class="row">
     {% if error %}
-        <div class="alert alert-info alert-dismissable">
-            <a class="panel-close close" data-dismiss="alert">×</a>
-            <i class="fa fa-coffee"></i>
-            {{ error.messageKey|trans(error.messageData, 'security') }}
-        </div>
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
             <form class="form-horizontal col-md-4 col-md-offset-4" action="{{ path("fos_user_security_check") }}" method="post">
                 {% if csrf_token %}
@@ -18,23 +14,6 @@
                 {% endif %}
 
 
-                <label for="password">{{ 'security.login.password'|trans }}</label>
-                <input type="password" id="password" name="_password"  required="required" />
-
-                <button type="submit" id="_submit" name="_submit" >{{ 'security.login.submit'|trans }}</button>
-                {#<input type="checkbox" id="remember_me" name="_remember_me" value="on" checked="checked"/>#}
-                <label>{{ 'security.login.remember_me'|trans }}</label>
-
-                <div class="_remember_me">
-                    <input type="checkbox" name="_remember_me" class="_remember_me-checkbox" id="remember_me" checked="checked">
-                    <label class="_remember_me-label" for="remember_me">
-                        <span class="_remember_me-inner"></span>
-                        <span class="_remember_me-switch"></span>
-                    </label>
-                </div>
-
-                <p class="message">Not registered? <a href="{{ path('fos_user_registration_register') }}">Create an account</a></p>
-                <p class="message">Forgot password? <a href="{{ path('fos_user_resetting_request') }}">Reset</a></p>
                 <div class="form-group">
                     <div class="input-group ">
                         <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
