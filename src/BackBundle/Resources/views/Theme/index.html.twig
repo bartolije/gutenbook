@@ -17,7 +17,7 @@
                         <td>{{ theme.id }}</td>
                         <td>{{ theme.name }}</td>
                         <td><a href="{{ path('theme_edit', { 'id': theme.id }) }}" tooltip="Edit"><i class="fa fa-pencil"></i></a> /
-                            <a href="{{ path('theme_delete', { 'id': theme.id }) }}" tooltip="Delete"><i class="fa fa-times"></i></a></td>
+                            <a href="{{ path('theme_delete', { 'id': theme.id }) }}"class="delete" tooltip="Delete"><i class="fa fa-times"></i></a></td>
                     </tr>
 
                 {% endfor %}

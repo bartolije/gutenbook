@@ -18,8 +18,8 @@
                         <td>{{ category.id }}</td>
                         <td>{{ category.name }}</td>
                         <td>
-                            <a tooltip="Edit" href="{{ path('category_edit', { 'id': category.id }) }}"><i class="fa fa-pencil"></i></a> /
-                            <a tooltip="Delete" href="{{ path('category_delete', { 'id': category.id }) }}"><i class="fa fa-times" aria-hidden="true"></i></a>
+                            <a tooltip="Edit" href="{{ path('category_edit', { 'id': category.id }) }} "tooltip="Edit" ><i class="fa fa-pencil"></i></a> /
+                            <a tooltip="Delete" href="{{ path('category_delete', { 'id': category.id }) }}" class="delete" tooltip="Delete"><i class="fa fa-times" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

@@ -37,10 +37,11 @@
                                         {% endfor %}
                                     {% endif %}
                                 </td>
-                                <td>{{ book.publishedAt | date }}</td>
+                                <td>{{ book.publishedAt | date("d/m/y") }}</td>
                                 <td>{{ book.summary }}</td>
-                                <td><a href="{{ path('book_edit', { 'id': book.id }) }}"><i class="fa fa-pencil"></i></a> /
-                                    <a href="{{ path('book_delete', { 'id': book.id }) }}"><i class="fa fa-times"></i></a></td>
+                                <td><a href="{{ path('book_edit', { 'id': book.id }) }}" tooltip="Edit"><i class="fa fa-pencil"></i></a> /
+
+                                    <a href="{{ path('book_delete', { 'id': book.id }) }}" class="delete" tooltip="Delete"><i class="fa fa-times"></i></a></td>
 
                             </tr>
                         {% endfor %}
