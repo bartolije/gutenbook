@@ -62,4 +62,13 @@
 ._remember_me-checkbox:checked + ._remember_me-label ._remember_me-switch {
     right: 0px;
 }
+.form-horizontal h1{
+    background: #FF9606;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -40px -40px 40px -40px;
+}
 

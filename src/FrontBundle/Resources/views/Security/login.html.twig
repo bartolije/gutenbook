@@ -9,12 +9,14 @@
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
             <form class="form-horizontal col-md-4 col-md-offset-4" action="{{ path("fos_user_security_check") }}" method="post">
+                <h1>Login</h1>
                 {% if csrf_token %}
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                 {% endif %}
 
 
                 <div class="form-group">
+                    <label>Username</label>
                     <div class="input-group ">
                         <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                         <input type="text" id="username" name="_username"  value="{{ last_username }}" required="required" />
@@ -22,6 +24,7 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Password</label>
                     <div class="input-group ">
                         <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
                         <input type="password" id="password" name="_password"  required="required" />
@@ -38,16 +41,19 @@
                 </div>
             </div>
 
-
-                <div class="form-group ">
-                    <div class="input-group">
-                        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-                        <div class="_remember_me">
-                            <input type="checkbox" name="_remember_me" class="_remember_me-checkbox" id="remember_me" checked="checked">
-                            <label class="_remember_me-label" for="remember_me">
-                                <span class="_remember_me-inner"></span>
-                                <span class="_remember_me-switch"></span>
-                            </label>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="form-group ">
+                            <div class="input-group">
+                                <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                                <div class="_remember_me">
+                                    <input type="checkbox" name="_remember_me" class="_remember_me-checkbox" id="remember_me" checked="checked">
+                                    <label class="_remember_me-label" for="remember_me">
+                                        <span class="_remember_me-inner"></span>
+                                        <span class="_remember_me-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

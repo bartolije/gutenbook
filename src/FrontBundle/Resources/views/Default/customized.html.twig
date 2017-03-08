@@ -1,230 +1,156 @@
 {%  extends "FrontBundle::base.html.twig" %}
-{% trans_default_domain 'FOSUserBundle' %}
+{#{% trans_default_domain 'FOSUserBundle' %}#}
 
 {% block body %}
 
-    <!--AUTHOR DETAIL SECTION START-->
-    <section class="kode-author-detail-2">
-        <div class="container">
-            <div class="kode-thumb">
-                <img class="user-img" src="{{ asset("assets/front/images/cover-4.jpg") }}" alt="">
-            </div>
-            <div class="kode-text">
-                <div class="contact-box">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <table>
+    <!--BEST SELLER SLIDER SECTION END-->
 
-                                <tr>
-                                    <td><i class="fa fa-envelope-o"></i></td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="social-icon">
-                                <ul>
-                                    <li><a href="{{ path('fos_user_profile_edit') }}"><i class="fa fa-pencil"></i></a></li>
+    <script src="{{ asset('assets/front/js/interact.min.js') }}"></script>
 
-                                </ul>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-            </div>
+    <div id="item-zone">
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque0.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque5.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque2.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque3.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque4.png') }}">#}
+    </div>
+
+    <div id="outer-dropzone" class="dropzone">
+            <div id="inner-dropzone" class="dropzone"></div>
         </div>
-    </section>
-    <!--AUTHOR DETAIL SECTION END-->
-    <!--RECENT RELEASE SECTION START-->
-    <section class="recent-release">
-        <div class="container">
-            <div class="section-heading-1">
-                <h2>Livres favoris</h2>
-                <div class="kode-icon"><i class="fa fa-book"></i></div>
-            </div>
-            <div class="owl-release owl-theme">
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img class="book-img" src="{{ asset("assets/front/images/cover-4.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-2.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img id="user_image" src="{{ asset("assets/front/images/cover-3.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-2.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-4.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-2.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-3.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-4.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="book-released">
-                        <div class="kode-thumb">
-                            <a href="#"><img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt=""></a>
-                            <div class="cart-btns">
-                                <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
-                            </div>
-                        </div>
-                        <div class="kode-text">
-                            <h3>Donec eu libero sit</h3>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--RECENT RELEASE SECTION END-->
 
 
-{% endblock body %}
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script type="text/javascript">
+
+
+
+    var obj = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+    var image = '';
+    for (var i = 0; i < obj.length; i++) {
+        // Do something with x[i]
+        var path = '<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque') }}'+ i + '.png">';
+        console.log(path);
+        $( "#item-zone" ).append( path );
+
+    }
+
+
+    // target elements with the "draggable" class
+interact('.draggable')
+        .draggable({
+            // enable inertial throwing
+            inertia: true,
+            // keep the element within the area of it's parent
+            restrict: {
+                restriction: "parent",
+                endOnly: true,
+                elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+            },
+            // enable autoScroll
+            autoScroll: true,
+
+            // call this function on every dragmove event
+            onmove: dragMoveListener,
+            // call this function on every dragend event
+            onend: function (event) {
+                var textEl = event.target.querySelector('p');
+
+                textEl && (textEl.textContent =
+                        'moved a distance of '
+                        + (Math.sqrt(event.dx * event.dx +
+                                event.dy * event.dy)|0) + 'px');
+            }
+        });
+
+function dragMoveListener (event) {
+    var target = event.target,
+            // keep the dragged position in the data-x/data-y attributes
+            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+    // translate the element
+    target.style.webkitTransform =
+            target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)';
+
+    // update the posiion attributes
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+}
+
+// this is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener;
+
+// enable draggables to be dropped into this
+interact('.dropzone').dropzone({
+    // only accept elements matching this CSS selector
+    accept: '#yes-drop',
+    // Require a 75% element overlap for a drop to be possible
+    overlap: 0.75,
+
+    // listen for drop related events:
+
+    ondropactivate: function (event) {
+        // add active dropzone feedback
+        event.target.classList.add('drop-active');
+    },
+    ondragenter: function (event) {
+        var draggableElement = event.relatedTarget,
+                dropzoneElement = event.target;
+
+        // feedback the possibility of a drop
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
+        draggableElement.textContent = 'Dragged in';
+    },
+    ondragleave: function (event) {
+        // remove the drop feedback style
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
+        event.relatedTarget.textContent = 'Dragged out';
+    },
+    ondrop: function (event) {
+        event.relatedTarget.textContent = 'Dropped';
+    },
+    ondropdeactivate: function (event) {
+        // remove active dropzone feedback
+        event.target.classList.remove('drop-active');
+        event.target.classList.remove('drop-target');
+    }
+});
+
+interact('.resize-drag')
+        .draggable({
+            onmove: window.dragMoveListener
+        })
+        .resizable({
+            preserveAspectRatio: true,
+            edges: { left: true, right: true, bottom: true, top: true }
+        })
+        .on('resizemove', function (event) {
+            var target = event.target,
+                    x = (parseFloat(target.getAttribute('data-x')) || 0),
+                    y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+            // update the element's style
+            target.style.width  = event.rect.width + 'px';
+            target.style.height = event.rect.height + 'px';
+
+            // translate when resizing from top or left edges
+            x += event.deltaRect.left;
+            y += event.deltaRect.top;
+
+            target.style.webkitTransform = target.style.transform =
+                    'translate(' + x + 'px,' + y + 'px)';
+
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+            target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
+        });
+</script>
+{% endblock %}
