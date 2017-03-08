@@ -4,29 +4,77 @@
 				CUSTOMIZED PAGE CSS
 ==========================================
 */
-body
-{
-    background-color: #fcfcfc;
+#drag-me::before {
+    content: "#" attr(id);
+    font-weight: bold;
 }
-<<<<<<< HEAD
+
+#outer-dropzone {
+    height: 800px;
+}
+
+#inner-dropzone {
+    height: 740px;
+}
+
+.dropzone {
+    background-color: #ccc;
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #FF9606;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    background-color: #29e;
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+
+    transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+    color: #000;
+    background-color: #4e4;
+}
+
+.resize-drag {
+    background-color: #29e;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 20px;
+
+    width: 120px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
 
 .resize-container {
     width: 100%;
-    height: 200px;
-=======
-.center-div
-{
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 800px;
-    height: 800px;
-    background-color: #ccc;
-    border-radius: 3px;
->>>>>>> 497df7333d8dca9be2b17db9894e7e7a661cda33
+    height: 140px;
 }
 
 /*
@@ -56,7 +104,6 @@ body
     display: block; width: 200%; margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
 }
-<<<<<<< HEAD
 
 .drag-drop {
     display: inline-block;
@@ -71,12 +118,10 @@ body
     transform: translate(0px, 0px);
 
     transition: background-color 0.3s;
-=======
 ._remember_me-inner:before, ._remember_me-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
     font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     box-sizing: border-box;
->>>>>>> 497df7333d8dca9be2b17db9894e7e7a661cda33
 }
 ._remember_me-inner:before {
     content: "ON";
