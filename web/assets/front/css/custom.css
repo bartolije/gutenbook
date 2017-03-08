@@ -11,14 +11,17 @@
 
 #outer-dropzone {
     height: 800px;
+    background-color: #ccc;
+
 }
 
 #inner-dropzone {
     height: 740px;
+    background-color: white;
+
 }
 
 .dropzone {
-    background-color: #ccc;
     border: dashed 4px transparent;
     border-radius: 4px;
     margin: 10px auto 30px;
@@ -43,7 +46,7 @@
     padding: 2em 0.5em;
 
     color: #fff;
-    background-color: #29e;
+    /*background-color: #29e;*/
     border: solid 2px #fff;
 
     -webkit-transform: translate(0px, 0px);
@@ -54,19 +57,22 @@
 
 .drag-drop.can-drop {
     color: #000;
-    background-color: #4e4;
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .resize-drag {
-    background-color: #29e;
+    background-color: #FF9606;
     color: white;
-    font-size: 20px;
-    font-family: sans-serif;
     border-radius: 8px;
     padding: 20px;
-    margin: 30px 20px;
+    margin: 0;
 
-    width: 120px;
+    width: 140px;
 
     /* This makes things *much* easier */
     box-sizing: border-box;
