@@ -17,11 +17,35 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @internal param Request $request
+     */
+    public function indexAction()
+    {
+        return $this->render('FrontBundle:Default:index.html.twig');
+    }
+
+    /**
+     * @Route("/results", name="search_results")
+     * @param Request $request
+     * @param $books
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function resultsAction(Request $request, $books = null)
+    {
+
+        $books = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book')->findAll();
+
+        return $this->render('FrontBundle:Default:results.html.twig', array('books' => $books));
+    }
+
+    /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(Request $request)
+    public function searchAction(Request $request)
     {
+
         $defaultData = array();
         $form = $this->createFormBuilder($defaultData)
             ->add('title', TextType::class, array(
@@ -53,12 +77,10 @@ class DefaultController extends Controller
             $data = $form->getData();
             $books = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book')
                 -> searchBooks( $data ['title'], $data ['theme'], $data ['categories']);
-
         }
 
-        return $this->render('FrontBundle:Default:index.html.twig', array('form' => $form->createView()));
+        return $this->render('FrontBundle:UI:search.html.twig', array('form' => $form->createView()));
     }
-
 
     /**
      * @Template()

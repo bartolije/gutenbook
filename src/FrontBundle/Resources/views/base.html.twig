@@ -20,6 +20,8 @@
     <link href="{{ asset('assets/front/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/front/js/dl-menu/component.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/css/bookblock.css') }}" />
+    <!-- confirm -->
+    <link href="{{ asset("assets/front/css/jquery-confirm.min.css") }}" rel="stylesheet">
 
     <link href="{{ asset('assets/front/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/front/css/form.css') }}" rel="stylesheet">
@@ -42,11 +44,10 @@
 
         {% include "@Front/Default/caroussel.html.twig" %}
 
-        {% include "FrontBundle:UI:search.html.twig" %}
+        {{ render(controller( 'FrontBundle:Default:search' )) }}
 
         <div class="kode-content">
             {% block body %}
-
             {% endblock %}
         </div>
 
@@ -68,6 +69,22 @@
     <script src="{{ asset('assets/front/js/jquerypp.custom.js') }}"></script>
     <script src="{{ asset('assets/front/js/jquery.bookblock.js') }}"></script>
     <script src="{{ asset('assets/front/js/functions.js') }}"></script>
-    <script src="{{ asset('assets/front/js/interact.js') }}"></script>
+    <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+    <script src="{{ asset("assets/front/js/jquery-confirm.min.js") }}"></script>
+    <script src="{{ asset('assets/front/js/profile.js') }}"></script>
+    <script>
+        $('a.delete').confirm({
+            title:"Suppression",
+            content: "Voulez-vous supprimer cette élément ?",
+            buttons: {
+                confirmer: function(){
+                    location.href = this.$target.attr('href');
+                },
+                annuler: function(){
+
+                }
+            }
+        });
+    </script>
 </body>
 </html>

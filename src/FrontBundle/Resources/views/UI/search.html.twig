@@ -1,4 +1,5 @@
-
+{{ form_start(form) }}
+        {{ form_errors(form) }}
 <!--BUT NOW START-->
 <div class="search-section">
     <div class="container">
@@ -16,16 +17,16 @@
 
                     <div class="row">
                         <div class="col-md-3 col-sm-4">
-                            <input type="text" placeholder="First Name">
+                            {{ form_widget(form.title, {'attr':{'placeholder':'Titre'}}) }}
                         </div>
                         <div class="col-md-3 col-sm-4">
-                            <input type="text" placeholder="Middle Name">
+                            {{ form_widget(form.theme, {'attr':{'aria-describedby':'basic-addon1', 'class':'search_list'}}) }}
                         </div>
                         <div class="col-md-3 col-sm-4">
-                            <input type="text" placeholder="Last Name">
+                            {{ form_widget(form.categories, {'attr':{'aria-describedby':'basic-addon1', 'class':'search_list'}}) }}
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <button>Search Author</button>
+                            {{ form_widget(form.send) }}
                         </div>
                     </div>
                 </div>
@@ -69,4 +70,5 @@
         </div>
     </div>
 </div>
-<!--BUT NOW END-->
+{{ form_rest(form) }}
+{{ form_end(form) }}

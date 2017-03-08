@@ -1,66 +1,62 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-
-
-
-
-
 /*
 ==========================================
 				CUSTOMIZED PAGE CSS
 ==========================================
 */
-
-.resize-drag {
-    background-color: #29e;
-    color: white;
-    font-size: 20px;
-    font-family: sans-serif;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 30px 20px;
-
-    width: 120px;
-
-    /* This makes things *much* easier */
-    box-sizing: border-box;
+body
+{
+    background-color: #fcfcfc;
 }
+<<<<<<< HEAD
 
 .resize-container {
     width: 100%;
     height: 200px;
-}
-
-
-#outer-dropzone {
+=======
+.center-div
+{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 800px;
     height: 800px;
-    background-color: #FF9606;
-}
-
-#inner-dropzone {
-    height: 700px;
     background-color: #ccc;
+    border-radius: 3px;
+>>>>>>> 497df7333d8dca9be2b17db9894e7e7a661cda33
+}
+
+/*
+==========================================
+				LOGIN CSS
+==========================================
+*/
+._remember_me {
+    margin-top: 10px;
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.remember_label {
+    padding-left: 20px;
 
 }
 
-.dropzone {
-    border: dashed 4px transparent;
-    border-radius: 4px;
-    margin: 10px auto 30px;
-    padding: 10px;
-    width: 80%;
-    transition: background-color 0.3s;
+._remember_me-checkbox {
+    display: none;
 }
-
-.drop-active {
-    border-color: #aaa;
+._remember_me-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 0 solid #FF9606; border-radius: 20px;
 }
-
-.drop-target {
-    background-color: #29e;
-    border-color: #fff;
-    border-style: solid;
+._remember_me-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
 }
+<<<<<<< HEAD
 
 .drag-drop {
     display: inline-block;
@@ -75,22 +71,39 @@
     transform: translate(0px, 0px);
 
     transition: background-color 0.3s;
+=======
+._remember_me-inner:before, ._remember_me-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+>>>>>>> 497df7333d8dca9be2b17db9894e7e7a661cda33
 }
-
-.drag-drop.can-drop {
-    color: #000;
-    background-color: #4e4;
+._remember_me-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #FF9606; color: #FFFFFF;
 }
-
-#drag-me::before {
-    content: "#" attr(id);
-    font-weight: bold;
+._remember_me-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE;
+    color: #FF9606;
+    text-align: right;
 }
-/*
-==========================================
-				LOGIN CSS
-==========================================
-*/
+._remember_me-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 0 solid  #FF9606; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+._remember_me-checkbox:checked + ._remember_me-label ._remember_me-inner {
+    margin-left: 0;
+}
+._remember_me-checkbox:checked + ._remember_me-label ._remember_me-switch {
+    right: 0px;
+}
 
 .login-page {
     width: 360px;
@@ -324,10 +337,73 @@
 .kode-connexion:hover, .kode-connexion ul li {
     background: orange;
 }
-.menu{
-
-}
 .search-form{
     margin-right: 10px !important;
     float: right !important;
+}
+
+/*
+==========================================
+				ADMIN TABLE CSS
+==========================================
+*/
+
+.new_button{
+    color:black;
+    font-weight: bold;
+
+}
+
+.table-category tr td, .table-category tr th{
+    text-align: center;
+    border-style:solid;
+    border-color:orange;
+    border-width:0px 0px 1px 0px;
+    color:black
+}
+
+.table-category tr th{
+    background-color: orange;
+}
+
+/*
+==========================================
+				ADMIN NEW / EDIT CSS
+==========================================
+*/
+.new_edit {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.book_box{
+    text-align:center;
+}
+/*
+===========================================
+            Search CSS
+===========================================
+*/
+.search_list{
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #333;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
