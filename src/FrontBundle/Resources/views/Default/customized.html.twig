@@ -1,6 +1,5 @@
-{% extends 'FrontBundle::base.html.twig' %}
+{%  extends "FrontBundle::base.html.twig" %}
 {% trans_default_domain 'FOSUserBundle' %}
-
 
 {% block body %}
 
@@ -11,7 +10,6 @@
                 <img class="user-img" src="{{ asset("assets/front/images/cover-4.jpg") }}" alt="">
             </div>
             <div class="kode-text">
-                <h2>{{ user.username }}</h2>
                 <div class="contact-box">
                     <div class="row">
                         <div class="col-md-8">
@@ -19,10 +17,16 @@
 
                                 <tr>
                                     <td><i class="fa fa-envelope-o"></i></td>
-                                    <td>{{ 'profile.show.email'|trans }}:</td>
-                                    <td> {{ app.user.email }}</td>
                                 </tr>
                             </table>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="social-icon">
+                                <ul>
+                                    <li><a href="{{ path('fos_user_profile_edit') }}"><i class="fa fa-pencil"></i></a></li>
+
+                                </ul>
+                            </div>
                         </div>
 
                     </div>
@@ -133,7 +137,7 @@
                 <div class="item">
                     <div class="book-released">
                         <div class="kode-thumb">
-                            <a href="#"><img src="i{{ asset("assets/front/images/cover-4.jpg") }}" alt=""></a>
+                            <a href="#"><img src="{{ asset("assets/front/images/cover-4.jpg") }}" alt=""></a>
                             <div class="cart-btns">
                                 <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
 
@@ -221,8 +225,6 @@
         </div>
     </section>
     <!--RECENT RELEASE SECTION END-->
-
-
 
 
 {% endblock body %}
