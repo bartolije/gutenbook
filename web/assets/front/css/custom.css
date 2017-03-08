@@ -11,24 +11,41 @@
 ==========================================
 */
 
-body
-{
-    background-color: #fcfcfc;
+
+.holder-library {
+    width: 500px;
+    height: 500px;
 }
-.center-div
-{
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 800px;
-    height: 800px;
+.dropzone {
     background-color: #ccc;
-    border-radius: 3px;
+    padding: 10px;
+    width: 500px;
+    height: 500px;
+    border: dashed 4px transparent;
+    float:left;
 }
 
+.draggable {
+    width: 100px;
+    height: 100px;
+
+    float:left;
+    background-color: #FF9606;
+    color: white;
+    padding:10px;
+    margin: 10px;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #000;
+    color: #FFF;
+    border-color: #fff;
+    border-style: solid;
+}
 
 
 
