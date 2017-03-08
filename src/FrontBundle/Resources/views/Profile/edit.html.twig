@@ -3,11 +3,10 @@
 
 {% block body %}
     <div class="container">
-        <h1>Edit Profile</h1>
         <hr>
-        <div class="row col-md-8 col-md-offset-2">
+        <div class="row col-md-10 col-md-offset-2">
             <!-- left column -->
-            <div class="col-md-4  col-md-offset-4">
+            <div class="col-md-4">
                 <div class="text-center">
                     <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
                     <h6>Upload a different photo...</h6>
@@ -17,57 +16,65 @@
             </div>
 
             <!-- edit form column -->
-            <div class="col-md-9 personal-info">
-
-                <h3>Personal info</h3>
-            <div class="col-md-12 personal-info">
+            <div class="col-md-6 personal-info">
                 <div class="alert alert-info alert-dismissable">
                     <a class="panel-close close" data-dismiss="alert">×</a>
                     <i class="fa fa-coffee"></i>
                     This is an <strong>.alert</strong>. Use this to show important messages to the user.
                 </div>
 
-                {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'form-horizontal col-md-12', 'role': 'form' } }) }}
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                        <input class="form-control" type="text" placeholder="First name">
+                {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'form-horizontal', 'role': 'form' } }) }}
+                   <h1>Profile Editing</h1>
+                    <div class="form-group">
+                        <label>First name</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            <input class="form-control" type="text" placeholder="First name">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                        <input class="form-control" type="text" placeholder="Last name">
+                    <div class="form-group">
+                        <label>Last name</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            <input class="form-control" type="text" placeholder="Last name">
 
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'form.email'|trans } }) }}
+                    <div class="form-group">
+                        <label>Email</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'form.email'|trans } }) }}
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                        {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
+                    <div class="form-group">
+                        <label>Username</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-                        {{ form_widget(form.current_password, { 'attr': {'class': 'form-control', 'placeholder': 'form.current_password'|trans } }) }}
+                    <div class="form-group">
+                        <label>Current password</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                            {{ form_widget(form.current_password, { 'attr': {'class': 'form-control', 'placeholder': 'form.current_password'|trans } }) }}
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="submit" class="btn btn-primary" value="{{ 'profile.edit.submit'|trans }}">
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-4">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="submit" value="{{ 'profile.edit.submit'|trans }}">
+                            </div>
+                        </div>
                     </div>
                 </div>
 

@@ -105,11 +105,12 @@ class DefaultController extends Controller
     /**
      * @Template()
      * @Route("/customized", name="customized")
-     * @param $token
      * @return array
      */
     public function customizeAction()
     {
         return $this->render('FrontBundle:Default:customized.html.twig');
     }
+
+
 }
