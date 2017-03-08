@@ -13,21 +13,84 @@
     {#<div class="section-heading-1">#}
         {#<h2>Customized library</h2>#}
     {#</div>#}
+    <!--LIBRARY GALLERY SECTION START-->
+    <section class="our-libraries">
+        <div class="container">
+            <h2>Our Libraries</h2>
+            <div class="our-libraries-cover">
+                <div class="owl-library">
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-1.png" alt="Library"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-2.png" alt="Library"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-3.png" alt="Library"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-4.png" alt="Library"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-1.png" alt="Library"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-2.png" alt="Library"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-3.png" alt="Library"></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/library-4.png" alt="Library"></a>
+                        </div>
+                    </div>
 
-    <div class="holder">
-        <div id="box-one" class="draggable">
-            <p> I am the first Box </p>
+                </div>
+            </div>
         </div>
-        <div id="box-two" class="draggable">
-            <p> I am the second Box </p>
+    </section>
+    <!--LIBRARY GALLERY SECTION END-->
+
+    <div class="resize-container">
+        <div id="yes-drop" class="resize-drag drag-drop">
+            Resize from any edge or corner
         </div>
+    </div>
 
-        <div id="dropzone" class="dropzone">You can drop the boxes here</div>
-
+    <div class="resize-container">
+        <div id="yes-drop" class="resize-drag drag-drop">
+            Resize from any edge or corner
+        </div>
     </div>
 
 
+    {#<div id="yes-drop" class="draggable drag-drop"> #no-drop </div>#}
+
+        {#<div id="yes-drop" class="draggable drag-drop"> #yes-drop </div>#}
+
+        <div id="outer-dropzone" class="dropzone">
+            #outer-dropzone
+            <div id="inner-dropzone" class="dropzone">#inner-dropzone</div>
+        </div>
+
+
     <script type="text/javascript">
+        // target elements with the "draggable" class
         interact('.draggable')
                 .draggable({
                     // enable inertial throwing
@@ -40,8 +103,18 @@
                     },
                     // enable autoScroll
                     autoScroll: true,
+
                     // call this function on every dragmove event
                     onmove: dragMoveListener,
+                    // call this function on every dragend event
+                    onend: function (event) {
+                        var textEl = event.target.querySelector('p');
+
+                        textEl && (textEl.textContent =
+                                'moved a distance of '
+                                + (Math.sqrt(event.dx * event.dx +
+                                        event.dy * event.dy)|0) + 'px');
+                    }
                 });
 
         function dragMoveListener (event) {
@@ -60,10 +133,15 @@
             target.setAttribute('data-y', y);
         }
 
+        // this is used later in the resizing and gesture demos
+        window.dragMoveListener = dragMoveListener;
+
         // enable draggables to be dropped into this
         interact('.dropzone').dropzone({
-            // Require a 50% element overlap for a drop to be possible
-            overlap: 0.50,
+            // only accept elements matching this CSS selector
+            accept: '#yes-drop',
+            // Require a 75% element overlap for a drop to be possible
+            overlap: 0.75,
 
             // listen for drop related events:
 
@@ -77,10 +155,14 @@
 
                 // feedback the possibility of a drop
                 dropzoneElement.classList.add('drop-target');
+                draggableElement.classList.add('can-drop');
+                draggableElement.textContent = 'Dragged in';
             },
             ondragleave: function (event) {
                 // remove the drop feedback style
                 event.target.classList.remove('drop-target');
+                event.relatedTarget.classList.remove('can-drop');
+                event.relatedTarget.textContent = 'Dragged out';
             },
             ondrop: function (event) {
                 event.relatedTarget.textContent = 'Dropped';
@@ -91,6 +173,35 @@
                 event.target.classList.remove('drop-target');
             }
         });
+
+        interact('.resize-drag')
+                .draggable({
+                    onmove: window.dragMoveListener
+                })
+                .resizable({
+                    preserveAspectRatio: true,
+                    edges: { left: true, right: true, bottom: true, top: true }
+                })
+                .on('resizemove', function (event) {
+                    var target = event.target,
+                            x = (parseFloat(target.getAttribute('data-x')) || 0),
+                            y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+                    // update the element's style
+                    target.style.width  = event.rect.width + 'px';
+                    target.style.height = event.rect.height + 'px';
+
+                    // translate when resizing from top or left edges
+                    x += event.deltaRect.left;
+                    y += event.deltaRect.top;
+
+                    target.style.webkitTransform = target.style.transform =
+                            'translate(' + x + 'px,' + y + 'px)';
+
+                    target.setAttribute('data-x', x);
+                    target.setAttribute('data-y', y);
+                    target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
+                });
     </script>
 
 
