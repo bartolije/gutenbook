@@ -2,7 +2,10 @@
 
 namespace FrontBundle\Controller;
 
+use BackBundle\Controller\CategoryController;
 use BackBundle\Entity\Book;
+use BackBundle\Entity\Category;
+use BackBundle\Entity\Theme;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -25,6 +28,7 @@ class DefaultController extends Controller
         return $this->render('FrontBundle:Default:index.html.twig');
     }
 
+
     /**
      * @Route("/results", name="search_results")
      * @param Request $request
@@ -33,11 +37,66 @@ class DefaultController extends Controller
      */
     public function resultsAction(Request $request, $books = null)
     {
+        $categoriesM = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Category')->findAll();
+        $themesM = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Theme')->findAll();
 
-        $books = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book')->findAll();
 
-        return $this->render('FrontBundle:Default:results.html.twig', array('books' => $books));
+        // $books = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book') -> searchBooks( $data ['title'], $data ['theme'], $data ['categories']);
+
+        $request = Request::createFromGlobals();
+        $pm = $request->query->all();
+        // $pm['theme']
+
+        //-------------------------\\
+        $repoTheme = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Theme');
+        $repoBook = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book');
+
+        $books = null;
+
+        if (isset($pm['theme']) && intval($pm['theme'])){
+
+
+            $themeId = $pm['theme'];
+
+            $theme = $repoTheme->findOneBy(
+                array('id' => $themeId)
+            );
+
+            if($theme instanceof Theme)
+            {
+                $books = $repoBook -> searchBooks(null, null, $theme);
+            }
+        }
+
+        //-------------------------\\
+        $repoCat = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Category');
+
+
+        if (isset($pm['category']) && intval($pm['category'])){
+
+            $categoryId = $pm['category'];
+
+            $category = $repoCat->findOneBy(
+                array('id' => $categoryId)
+            );
+
+            if($category instanceof Category)
+            {
+                $books = $repoBook -> searchBooks(null, $category, null);
+            }
+
+            // $books += ****
+        }
+
+        if (!$books){
+
+            $books = $repoBook -> searchBooks(null, null, null);
+            $repoBook->findAll();
+        }
+
+        return $this->render('FrontBundle:Default:results.html.twig', array('books' => $books, 'categories' => $categoriesM, 'themes' => $themesM));
     }
+    //searchBooks
 
     /**
      * @param Request $request
@@ -55,16 +114,16 @@ class DefaultController extends Controller
                     'class' => 'BackBundle:Theme',
                     'choice_label' => 'name',
                     'query_builder' => function(EntityRepository $er) {
-                        return $er->createQueryBuilder('u')
-                            ->orderBy('u.name', 'ASC');
+                        return $er->createQueryBuilder('t')
+                            ->orderBy('t.name', 'ASC');
                     })
             )
             ->add('categories', EntityType::class, array(
                     'class' => 'BackBundle:Category',
                     'choice_label' => 'name',
                     'query_builder' => function(EntityRepository $er) {
-                        return $er->createQueryBuilder('u')
-                            ->orderBy('u.name', 'ASC');
+                        return $er->createQueryBuilder('c')
+                            ->orderBy('c.name', 'ASC');
                     })
             )
             ->add('send', SubmitType::class)

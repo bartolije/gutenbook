@@ -2,6 +2,7 @@
 
 namespace BackBundle\Repository;
 
+use BackBundle\Entity\Book;
 use BackBundle\Entity\Category;
 use BackBundle\Entity\Theme;
 use Doctrine\ORM\EntityRepository;
@@ -18,15 +19,20 @@ class BookRepository extends EntityRepository
             ->setParameter('title', '%' . $title . '%');
 
         if ($category instanceof Category) {
-            $query->andWhere('b.categories = :category')
-                ->setParameter('category', $category);
+            $query->leftJoin('b.categories', 'cat')
+                  ->addSelect('cat')
+                  ->andWhere('cat = :category')
+                  ->setParameter('category', $category);
         }
 
         if ($theme instanceof Theme) {
-            $query->andWhere('b.themes = :theme')
+            $query->leftJoin('b.themes', 'th')
+                ->addSelect('th')
+                ->andWhere('th = :theme')
                 ->setParameter('theme', $theme);
         }
 
         return $query->getQuery()->getResult();
     }
+
 }
