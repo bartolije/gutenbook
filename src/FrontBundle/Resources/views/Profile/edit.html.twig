@@ -2,70 +2,92 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block body %}
+
     <div class="container">
-        <h1>Edit Profile</h1>
-        <hr>
         <div class="row">
-            <!-- left column -->
-            <div class="col-md-3">
-                <div class="text-center">
-                    <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                    <h6>Upload a different photo...</h6>
-
-                    <input type="file" class="form-control">
-                </div>
-            </div>
-
+        <hr>
             <!-- edit form column -->
-            <div class="col-md-9 personal-info">
+            <div class="col-md-6 col-md-offset-3 personal-info">
+                <div class="alert alert-info alert-dismissable">
+                    <a class="panel-close close" data-dismiss="alert">×</a>
+                    <i class="fa fa-coffee"></i>
+                    This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                </div>
 
-                <h3>Personal info</h3>
+                {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'form-horizontal', 'role': 'form' } }) }}
 
-                    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'form-horizontal', 'role': 'form' } }) }}
+                   <h1>Profile Editing</h1>
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="text-center">
+                                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                                <h6>Upload a different photo...</h6>
+                                <input type="file" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                <hr>
 
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">First name:</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" type="text" value="Jane">
+                        <label>First name</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            <input class="form-control" type="text" placeholder="First name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last name</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            <input class="form-control" type="text" placeholder="Last name">
 
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Last name:</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" type="text" value="Bishop">
-                        </div>
-                    </div>
+
+
 
                     <div class="form-group">
-                        <label class="col-lg-3 control-label">Email:</label>
-                        <div class="col-lg-8">
+                        <label>Email</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
                             {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'form.email'|trans } }) }}
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Username:</label>
-                        <div class="col-md-8">
+                        <label>Username</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
                             {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'form.username'|trans } }) }}
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Current Password:</label>
-                        <div class="col-md-8">
+                        <label>Current password</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
                             {{ form_widget(form.current_password, { 'attr': {'class': 'form-control', 'placeholder': 'form.current_password'|trans } }) }}
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
-                        <div class="col-md-8">
-                            <input type="submit" class="btn btn-primary" value="{{ 'profile.edit.submit'|trans }}">
-                            <span></span>
+
+
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-5">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="submit" value="{{ 'profile.edit.submit'|trans }}">
+                            </div>
                         </div>
                     </div>
+                </div>
+
                 {{ form_rest(form) }}
                 {{ form_end(form) }}
             </div>
+        </div>
         </div>
     </div>
     <hr>

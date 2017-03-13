@@ -1,27 +1,30 @@
 {% extends 'FrontBundle::base.html.twig' %}
 
 {% block body %}
+    <div class="row">
+        <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-1 col-lg-6 col-md-6 col-sm-10">
+            <button tooltip="New Category"><a href="{{ path('category_create') }}" class="new_button">New</a></button>
+            <br/>
+            <table class="table-category table-striped">
 
-    <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Edit/Delete</th>
+                </tr>
 
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Edit/Delete</th>
-        </tr>
+                {% for category in categories %}
+                    <tr>
+                        <td>{{ category.id }}</td>
+                        <td>{{ category.name }}</td>
+                        <td>
+                            <a tooltip="Edit" href="{{ path('category_edit', { 'id': category.id }) }} "tooltip="Edit" ><i class="fa fa-pencil"></i></a> /
+                            <a tooltip="Delete" href="{{ path('category_delete', { 'id': category.id }) }}" class="delete" tooltip="Delete"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
 
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>
-                    <a href="{{ path('category_edit', { 'id': category.id }) }}">Edit</a> /
-                    <a href="{{ path('category_delete', { 'id': category.id }) }}">Delete</a>
-                </td>
-            </tr>
-
-        {% endfor %}
-
-    </table>
-
+        </div>
+    </div>
 {% endblock %}

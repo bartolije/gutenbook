@@ -1,4 +1,87 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/*
+==========================================
+				CUSTOMIZED PAGE CSS
+==========================================
+*/
+#drag-me::before {
+    content: "#" attr(id);
+    font-weight: bold;
+}
+
+#outer-dropzone {
+    height: 800px;
+    background-color: #ccc;
+
+}
+
+#inner-dropzone {
+    height: 740px;
+    background-color: white;
+
+}
+
+.dropzone {
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #FF9606;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    /*background-color: #29e;*/
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+
+    transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+    color: #000;
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.resize-drag {
+    background-color: #FF9606;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+
+    width: 140px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
+
+.resize-container {
+    width: 100%;
+    height: 140px;
+}
 
 /*
 ==========================================
@@ -26,6 +109,20 @@
 ._remember_me-inner {
     display: block; width: 200%; margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    /*background-color: #29e;*/
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    transition: background-color 0.3s;
 }
 ._remember_me-inner:before, ._remember_me-inner:after {
     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
@@ -291,10 +388,73 @@
 .kode-connexion:hover, .kode-connexion ul li {
     background: orange;
 }
-.menu{
-
-}
 .search-form{
     margin-right: 10px !important;
     float: right !important;
+}
+
+/*
+==========================================
+				ADMIN TABLE CSS
+==========================================
+*/
+
+.new_button{
+    color:black;
+    font-weight: bold;
+
+}
+
+.table-category tr td, .table-category tr th{
+    text-align: center;
+    border-style:solid;
+    border-color:orange;
+    border-width:0px 0px 1px 0px;
+    color:black
+}
+
+.table-category tr th{
+    background-color: orange;
+}
+
+/*
+==========================================
+				ADMIN NEW / EDIT CSS
+==========================================
+*/
+.new_edit {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.book_box{
+    text-align:center;
+}
+/*
+===========================================
+            Search CSS
+===========================================
+*/
+.search_list{
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #999;
+    background-color: #444;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }

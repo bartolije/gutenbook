@@ -1,0 +1,156 @@
+{%  extends "FrontBundle::base.html.twig" %}
+{#{% trans_default_domain 'FOSUserBundle' %}#}
+
+{% block body %}
+
+    <!--BEST SELLER SLIDER SECTION END-->
+
+    <script src="{{ asset('assets/front/js/interact.min.js') }}"></script>
+
+
+    <div id="item-zone">
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque0.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque5.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque2.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque3.png') }}">#}
+    {#<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque4.png') }}">#}
+    </div>
+
+    <div id="outer-dropzone" class="dropzone">
+            <div id="inner-dropzone" class="dropzone"></div>
+        </div>
+
+
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script type="text/javascript">
+
+
+
+    var obj = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
+    var image = '';
+    for (var i = 0; i < obj.length; i++) {
+        // Do something with x[i]
+        var path = '<img id="yes-drop" class="resize-drag drag-drop" src="{{ asset('assets/front/images/banque1/banque') }}'+ i + '.png">';
+        console.log(path);
+        $( "#item-zone" ).append( path );
+
+    }
+
+
+    // target elements with the "draggable" class
+interact('.draggable')
+        .draggable({
+            // enable inertial throwing
+            inertia: true,
+            // keep the element within the area of it's parent
+            restrict: {
+                restriction: "parent",
+                endOnly: true,
+                elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+            },
+            // enable autoScroll
+            autoScroll: true,
+
+            // call this function on every dragmove event
+            onmove: dragMoveListener,
+            // call this function on every dragend event
+            onend: function (event) {
+                var textEl = event.target.querySelector('p');
+
+                textEl && (textEl.textContent =
+                        'moved a distance of '
+                        + (Math.sqrt(event.dx * event.dx +
+                                event.dy * event.dy)|0) + 'px');
+            }
+        });
+
+function dragMoveListener (event) {
+    var target = event.target,
+            // keep the dragged position in the data-x/data-y attributes
+            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+    // translate the element
+    target.style.webkitTransform =
+            target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)';
+
+    // update the posiion attributes
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+}
+
+// this is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener;
+
+// enable draggables to be dropped into this
+interact('.dropzone').dropzone({
+    // only accept elements matching this CSS selector
+    accept: '#yes-drop',
+    // Require a 75% element overlap for a drop to be possible
+    overlap: 0.75,
+
+    // listen for drop related events:
+
+    ondropactivate: function (event) {
+        // add active dropzone feedback
+        event.target.classList.add('drop-active');
+    },
+    ondragenter: function (event) {
+        var draggableElement = event.relatedTarget,
+                dropzoneElement = event.target;
+
+        // feedback the possibility of a drop
+        dropzoneElement.classList.add('drop-target');
+        draggableElement.classList.add('can-drop');
+        draggableElement.textContent = 'Dragged in';
+    },
+    ondragleave: function (event) {
+        // remove the drop feedback style
+        event.target.classList.remove('drop-target');
+        event.relatedTarget.classList.remove('can-drop');
+        event.relatedTarget.textContent = 'Dragged out';
+    },
+    ondrop: function (event) {
+        event.relatedTarget.textContent = 'Dropped';
+    },
+    ondropdeactivate: function (event) {
+        // remove active dropzone feedback
+        event.target.classList.remove('drop-active');
+        event.target.classList.remove('drop-target');
+    }
+});
+
+interact('.resize-drag')
+        .draggable({
+            onmove: window.dragMoveListener
+        })
+        .resizable({
+            preserveAspectRatio: true,
+            edges: { left: true, right: true, bottom: true, top: true }
+        })
+        .on('resizemove', function (event) {
+            var target = event.target,
+                    x = (parseFloat(target.getAttribute('data-x')) || 0),
+                    y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+            // update the element's style
+            target.style.width  = event.rect.width + 'px';
+            target.style.height = event.rect.height + 'px';
+
+            // translate when resizing from top or left edges
+            x += event.deltaRect.left;
+            y += event.deltaRect.top;
+
+            target.style.webkitTransform = target.style.transform =
+                    'translate(' + x + 'px,' + y + 'px)';
+
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+            target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
+        });
+</script>
+{% endblock %}
