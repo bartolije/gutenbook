@@ -10,6 +10,7 @@
 
     <div id="item-zone"></div>
 
+
     <div id="outer-dropzone" class="dropzone">
             <div id="inner-dropzone" class="dropzone"></div>
         </div>
@@ -19,7 +20,10 @@
             <button id="saveButton" >Save Library</button>
 
         </div>
+        <div id="result">
 
+
+        </div>
     </div>
 
 
@@ -31,17 +35,20 @@
 
 
     $( "#saveButton" ).click(function() {
-        html2canvas([document.getElementById('inner-dropzone')], {
+        html2canvas([document.getElementById('outer-dropzone')], {
             onrendered: function(canvas) {
                 var data = canvas.toDataURL('image/png');
+
+                var image = new Image();
+                image.src = data;
+
+                document.getElementById('result').appendChild(image);
                 alert('Picture saved successfully');
+
                 // AJAX call to send `data` to a PHP file that creates an image from the dataURI string and saves it to a directory on the server
             }
         });
     });
-
-
-
 
     var obj = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
     var image = '';
@@ -80,6 +87,8 @@ interact('.draggable')
             }
         });
 
+
+
 function dragMoveListener (event) {
     var target = event.target,
             // keep the dragged position in the data-x/data-y attributes
@@ -91,7 +100,7 @@ function dragMoveListener (event) {
             target.style.transform =
                     'translate(' + x + 'px, ' + y + 'px)';
 
-    // update the posiion attributes
+    // update the position attributes
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
 }
@@ -123,17 +132,19 @@ interact('.dropzone').dropzone({
     },
     ondragleave: function (event) {
         // remove the drop feedback style
-        event.target.classList.remove('drop-target');
         event.relatedTarget.classList.remove('can-drop');
         event.relatedTarget.textContent = 'Dragged out';
     },
     ondrop: function (event) {
         event.relatedTarget.textContent = 'Dropped';
+
     },
     ondropdeactivate: function (event) {
         // remove active dropzone feedback
         event.target.classList.remove('drop-active');
         event.target.classList.remove('drop-target');
+        document.getElementById('inner-dropzone').appendChild(event.relatedTarget);
+
     }
 });
 
