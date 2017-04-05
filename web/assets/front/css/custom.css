@@ -1,0 +1,460 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/*
+==========================================
+				CUSTOMIZED PAGE CSS
+==========================================
+*/
+#drag-me::before {
+    content: "#" attr(id);
+    font-weight: bold;
+}
+
+#outer-dropzone {
+    height: 800px;
+    background-color: #ccc;
+
+}
+
+#inner-dropzone {
+    height: 740px;
+    background-color: white;
+
+}
+
+.dropzone {
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #FF9606;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    /*background-color: #29e;*/
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+
+    transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+    color: #000;
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.resize-drag {
+    background-color: #FF9606;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+
+    width: 140px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
+
+.resize-container {
+    width: 100%;
+    height: 140px;
+}
+
+/*
+==========================================
+				LOGIN CSS
+==========================================
+*/
+._remember_me {
+    margin-top: 10px;
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.remember_label {
+    padding-left: 20px;
+
+}
+
+._remember_me-checkbox {
+    display: none;
+}
+._remember_me-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 0 solid #FF9606; border-radius: 20px;
+}
+._remember_me-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    /*background-color: #29e;*/
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    transition: background-color 0.3s;
+}
+._remember_me-inner:before, ._remember_me-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+._remember_me-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #FF9606; color: #FFFFFF;
+}
+._remember_me-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE;
+    color: #FF9606;
+    text-align: right;
+}
+._remember_me-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 0 solid  #FF9606; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+._remember_me-checkbox:checked + ._remember_me-label ._remember_me-inner {
+    margin-left: 0;
+}
+._remember_me-checkbox:checked + ._remember_me-label ._remember_me-switch {
+    right: 0px;
+}
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form-login-div {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form-login-div input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form-login-div button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FF9606;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.form-login-div button:hover,.form-login-div button:active,.form-login-div button:focus {
+    background: #FF8200;
+}
+.form-login-div .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form-login-div .message a {
+    color: #FF9606;
+    text-decoration: none;
+}
+.form-login-div .register-form {
+    display: none;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+.container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+.container .info span .fa {
+    color: #EF3B3A;
+}
+
+.login-page .form-login-div .login-form .check{
+    display:none;
+}
+
+#remember_me {
+    float: left;
+}
+
+/* USER PROFILE PAGE */
+
+.kode-author-detail-2 .kode-thumb a #user_image{
+    height: 60px;
+}
+
+/*
+==========================================
+				RESETTING CSS
+==========================================
+*/
+
+
+.reset-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form-reset {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form-reset input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form-reset button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: orange;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.form-reset button:hover,.form-reset button:active,.form-reset button:focus {
+    background: #43A047;
+}
+.form-reset .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form-reset .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+.form-reset .register-form {
+    display: none;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+.container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+.container .info span .fa {
+    color: #EF3B3A;
+}
+/*
+==========================================
+				MENU CSS
+==========================================
+*/
+.kode-connexion, .kode-connexion ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.kode-connexion{
+    float:right;
+}
+.kode-connexion li{
+    display:inline-block;
+    position:relative;
+}
+.kode-connexion ul {
+    position: absolute;
+    z-index: 2;
+    max-height:0;
+    left:0;
+    right: 0;
+    overflow:hidden;
+    -moz-transition: .6s all .2s;
+    -webkit-transition: .6s all .2s;
+    transition: .6s all .2s;
+}
+.kode-connexion li:hover ul {
+    max-height:15em;
+    text-align:center;
+}
+.kode-connexion:hover, .kode-connexion ul li {
+    background: orange;
+}
+.search-form{
+    margin-right: 10px !important;
+    float: right !important;
+}
+
+/*
+==========================================
+				ADMIN TABLE CSS
+==========================================
+*/
+
+.new_button{
+    color:black;
+    font-weight: bold;
+
+}
+
+.table-category tr td, .table-category tr th{
+    text-align: center;
+    border-style:solid;
+    border-color:orange;
+    border-width:0px 0px 1px 0px;
+    color:black
+}
+
+.table-category tr th{
+    background-color: orange;
+}
+
+/*
+==========================================
+				ADMIN NEW / EDIT CSS
+==========================================
+*/
+.new_edit {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.book_box{
+    text-align:center;
+}
+/*
+===========================================
+            Search CSS
+===========================================
+*/
+.search_list{
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #999;
+    background-color: #444;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control{
+    border-radius: 0px; !important;
+}

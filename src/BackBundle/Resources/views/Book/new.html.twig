@@ -1,5 +1,50 @@
-{% extends 'BackBundle::base.html.twig' %}
+{% extends 'FrontBundle::base.html.twig' %}
 
 {% block body %}
-    {{ form(form) }}
+    <div class="row">
+        <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-1 col-lg-6 col-md-6 col-sm-10">
+            <div class="new_edit">
+                {{ form_start(form) }}
+                <div class="form-group">
+                    <h3>New Book</h3>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    {{ form_widget(form.title, {'attr':{'placeholder':'Title'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    {{ form_widget(form.author, {'attr':{'placeholder':'Author'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>Editor</label>
+                    {{ form_widget(form.editor, {'attr':{'placeholder':'Editor'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>Categories</label>
+                    <br />
+                    {{ form_widget(form.categories) }}
+                </div>
+                <div class="form-group">
+                    <label>Themes</label>
+                    <br />
+                    {{ form_widget(form.themes) }}
+                </div>
+                <div class="form-group">
+                    <label>Summary</label>
+
+                    {{ form_widget(form.summary, {'attr':{'placeholder':'summary'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>Publication Date</label>
+                    {{ form_widget(form.publishedAt) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.save) }}
+                </div>
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

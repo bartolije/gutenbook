@@ -1,0 +1,20 @@
+{% extends 'FrontBundle::base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+<div class="container">
+    <div row>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="alert alert-success" role="alert">
+                <p>
+                    <strong>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</strong>
+                     Now you can access to your profil .
+                </p>
+            </div>
+            {% if targetUrl %}
+            <p><a href="{{ path('fos_user_profile_show') }}">{{ 'registration.back'|trans }}</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
