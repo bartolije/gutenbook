@@ -32,11 +32,11 @@
     <![endif]-->
 </head>
 <body>
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
+    {#<div id="loader-wrapper">#}
+        {#<div id="loader"></div>#}
+        {#<div class="loader-section section-left"></div>#}
+        {#<div class="loader-section section-right"></div>#}
+    {#</div>#}
 
     <div class="wrapper kode-header-class-3">
 
@@ -44,7 +44,7 @@
 
         {% include "@Front/Default/caroussel.html.twig" %}
 
-        {{ render(controller( 'FrontBundle:Default:search' )) }}
+        {% include "FrontBundle:UI:search.html.twig" %}
 
         <div class="kode-content">
             {% block body %}

@@ -11,6 +11,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Debug\Debug;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,95 +52,51 @@ class DefaultController extends Controller
         $repoTheme = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Theme');
         $repoBook = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book');
 
-        $books = null;
+        if($books == null) {
 
-        if (isset($pm['theme']) && intval($pm['theme'])){
-
-
-            $themeId = $pm['theme'];
-
-            $theme = $repoTheme->findOneBy(
-                array('id' => $themeId)
-            );
-
-            if($theme instanceof Theme)
-            {
-                $books = $repoBook -> searchBooks(null, null, $theme);
-            }
-        }
-
-        //-------------------------\\
-        $repoCat = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Category');
+            if (isset($pm['theme']) && intval($pm['theme'])) {
 
 
-        if (isset($pm['category']) && intval($pm['category'])){
+                $themeId = $pm['theme'];
 
-            $categoryId = $pm['category'];
+                $theme = $repoTheme->findOneBy(
+                    array('id' => $themeId)
+                );
 
-            $category = $repoCat->findOneBy(
-                array('id' => $categoryId)
-            );
-
-            if($category instanceof Category)
-            {
-                $books = $repoBook -> searchBooks(null, $category, null);
+                if ($theme instanceof Theme) {
+                    $books = $repoBook->searchBooks(null, null, $theme);
+                }
             }
 
-            // $books += ****
-        }
+            //-------------------------\\
+            $repoCat = $this->getDoctrine()->getManager()->getRepository('BackBundle:Category');
 
-        if (!$books){
 
-            $books = $repoBook -> searchBooks(null, null, null);
-            $repoBook->findAll();
+            if (isset($pm['category']) && intval($pm['category'])) {
+
+                $categoryId = $pm['category'];
+
+                $category = $repoCat->findOneBy(
+                    array('id' => $categoryId)
+                );
+
+                if ($category instanceof Category) {
+                    $books = $repoBook->searchBooks(null, $category, null);
+                }
+
+                // $books += ****
+            }
+
+            if (!$books) {
+
+                $books = $repoBook->searchBooks(null, null, null);
+                $repoBook->findAll();
+            }
         }
 
         return $this->render('FrontBundle:Default:results.html.twig', array('books' => $books, 'categories' => $categoriesM, 'themes' => $themesM));
     }
-    //searchBooks
 
-    /**
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function searchAction(Request $request)
-    {
-
-        $defaultData = array();
-        $form = $this->createFormBuilder($defaultData)
-            ->add('title', TextType::class, array(
-                'required' => false,
-            ))
-            ->add('theme', EntityType::class, array(
-                    'class' => 'BackBundle:Theme',
-                    'choice_label' => 'name',
-                    'query_builder' => function(EntityRepository $er) {
-                        return $er->createQueryBuilder('t')
-                            ->orderBy('t.name', 'ASC');
-                    })
-            )
-            ->add('categories', EntityType::class, array(
-                    'class' => 'BackBundle:Category',
-                    'choice_label' => 'name',
-                    'query_builder' => function(EntityRepository $er) {
-                        return $er->createQueryBuilder('c')
-                            ->orderBy('c.name', 'ASC');
-                    })
-            )
-            ->add('send', SubmitType::class)
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()){
-
-            $data = $form->getData();
-            $books = $this->getDoctrine()->getManager()-> getRepository('BackBundle:Book')
-                -> searchBooks( $data ['title'], $data ['theme'], $data ['categories']);
-        }
-
-        return $this->render('FrontBundle:UI:search.html.twig', array('form' => $form->createView()));
-    }
 
     /**
      * @Template()
@@ -150,7 +107,7 @@ class DefaultController extends Controller
      */
     public function readAction($token)
     {
-        $repository = $this ->getDoctrine() ->getManager() ->getRepository('AppBundle:Book');
+        $repository = $this->getDoctrine()->getManager()->getRepository('BackBundle:Book');
         $book = $repository->findOneBy(array('token' => $token));
 
         if(!($book instanceof Book))

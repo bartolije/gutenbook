@@ -88,6 +88,12 @@ class Book
      */
     private $themes;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=8, unique=true, nullable=false)
+     */
+    private $token;
 
 
     public function __construct()
@@ -347,6 +353,22 @@ class Book
     public function removeTheme(Theme $theme)
     {
         $this->themes->removeElement($theme);
+    }
+
+    /**
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param string $token
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
     }
 
 

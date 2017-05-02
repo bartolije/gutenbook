@@ -1,5 +1,4 @@
-{{ form_start(form) }}
-        {{ form_errors(form) }}
+
 <!--BUT NOW START-->
 <div class="search-section">
     <div class="container">
@@ -14,19 +13,20 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="Basic">
                 <div class="form-container">
-
                     <div class="row">
                         <div class="col-md-3 col-sm-4">
-                            {{ form_widget(form.title, {'attr':{'placeholder':'Titre','class':'form-control'}}) }}
+                            <input type="text" placeholder="First Name" class="form-control">
                         </div>
                         <div class="col-md-3 col-sm-4">
-                            {{ form_widget(form.theme, {'attr':{'aria-describedby':'basic-addon1', 'class':'search_list'}}) }}
+                            <input type="text" placeholder="Middle Name" class="form-control">
                         </div>
                         <div class="col-md-3 col-sm-4">
-                            {{ form_widget(form.categories, {'attr':{'aria-describedby':'basic-addon1', 'class':'search_list'}}) }}
+                            <input type="text" placeholder="Last Name" class="form-control">
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            {{ form_widget(form.send) }}
+                            <a href="{{ path('search_results', {'request': app.request }) }}">
+                                <button>Search Author</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,9 @@
                             <input type="text" placeholder="Last Name" class="form-control">
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <button>Search Author</button>
+                            <a href="{{ path('search_results', {'request': app.request }) }}">
+                                <button>Search Author</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +64,9 @@
                             <input type="text" placeholder="Last Name" class="form-control">
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <button>Search Author</button>
+                            <a href="{{ path('search_results', {'request': app.request }) }}">
+                                <button>Search Author</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -70,5 +74,3 @@
         </div>
     </div>
 </div>
-{{ form_rest(form) }}
-{{ form_end(form) }}

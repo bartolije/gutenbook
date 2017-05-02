@@ -1,40 +1,6 @@
 {% extends 'FrontBundle::base.html.twig' %}
 
-{% block body %}
-
-
-    <div id="loader-wrapper">
-        <div id="loader"></div>
-
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-
-    </div>
-    <!--WRAPPER START-->
-    <div class="wrapper kode-header-class-3">
-        <!--HEADER START-->
-        <header class="header-3">
-            <div class="container">
-                <div class="logo-container">
-                    <div class="row">
-
-                        <div class="col-md-9">
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!--HEADER END-->
-        <!--BANNER START-->
-        <div class="kode-inner-banner">
-            <div class="kode-page-heading">
-
-            </div>
-        </div>
-        <!--BANNER END-->
-        `
+{% block body %}        `
         <!--CONTENT START-->
         <div class="kode-content padding-tb-50">
             <div class="container">
@@ -44,31 +10,27 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="kode-thumb">
-                                <img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt="">
+                                {% if book.picture is null %}
+                                    <img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt="">
+                                {% else %}
+                                    <img src="{{ asset( book.picture ) }}" alt="">
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-md-7">
                             <div class="kode-text">
-                                <h2>Apllication Health and Well-Beign</h2>
-                                <div class="product-review">
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>4 Customer reveiws</p>
-                                </div>
-                                <div class="product-price">
-                                    <h4></h4>
-                                    <p>Author : <span class="color">Robert L. Lukdke</span></p>
-                                </div>
+                                <h2>{{ book.title }}</h2>
                                 <div class="book-text">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+                                    <p>
+                                        {{ book.summary }}
+                                    </p>
                                 </div>
                                 <div class="book-text">
                                     <p>Category: Books.</p>
                                     <p></p>
-                                    <p>Author: Daniel Abraham</p>
-                                    <p>Publisher: Journal inc</p>
-                                    <p>Product ID: 1100</p>
+                                    <p>Author: {{ book.author }}</p>
+                                    <p>Publisher: {{ book.editor }}</p>
+                                    <p>Product ID: {{ book.title }}</p>
                                 </div>
                                 <a href="#" class="add-to-cart">Add To Wishlist</a>
                                 <a href="#" class="add-to-cart">Get a Quote</a>
@@ -82,65 +44,31 @@
                         <div class="section-heading-1">
                             <div class="kode-icon"><i class="fa fa-book"></i></div>
                         </div>
-                        <div class="bb-custom-wrapper">
-                            <div id="bb-bookblock" class="bb-bookblock">
-                                <div class="bb-item">
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 1</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 2</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p><p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                </div>
-                                <div class="bb-item">
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 3</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 4</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p><p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                </div>
-                                <div class="bb-item">
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 5</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 6</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p><p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                </div>
-                                <div class="bb-item">
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 7</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 8</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p><p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                </div>
-                                <div class="bb-item">
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 9</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                    <div class="bb-custom-side">
-                                        <h3>Chepter 10</h3>
-                                        <p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p><p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <nav>
-                                <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
-                                <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
-                            </nav>
-                        </div>
+                        {% include "@static_books/"~ book.title~".html" %}
+
+                        {#<div class="bb-custom-wrapper">#}
+                            {#<div id="bb-bookblock" class="bb-bookblock">#}
+
+                                {##}
+
+                                {#<div class="bb-item">#}
+                                    {#<div class="bb-custom-side">#}
+                                        {#<h3>Chepter 9</h3>#}
+                                        {#<p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>#}
+                                    {#</div>#}
+                                    {#<div class="bb-custom-side">#}
+                                        {#<h3>Chepter 10</h3>#}
+                                        {#<p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p><p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+
+                            {#<nav>#}
+                                {#<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>#}
+                                {#<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>#}
+                            {#</nav>#}
+                        {#</div>#}
                     </div>
                 </section>
                 <!--RELATED PRODUCTS START-->

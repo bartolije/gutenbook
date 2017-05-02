@@ -33,7 +33,9 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="books-listing-4">
                                     <div class="kode-thumb">
-                                        <a href="#"><img src="images/book.png" alt=""></a>
+                                        <a href="{{ path('read_book', {'token': book.token}) }}">
+                                            <img src="{{ asset('assets/front/images/book-default-cover.jpg') }}" alt="">
+                                        </a>
                                     </div>
                                     <div class="kode-text">
                                         <h3><a href="#">{{ book.title }}</a></h3>
