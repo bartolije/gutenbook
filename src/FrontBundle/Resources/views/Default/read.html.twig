@@ -1,269 +1,76 @@
 {% extends 'FrontBundle::base.html.twig' %}
 
 {% block body %}        `
-        <!--CONTENT START-->
-        <div class="kode-content padding-tb-50">
-            <div class="container">
+    <!--CONTENT START-->
+    <div class="kode-content padding-tb-50">
+        <div class="container">
 
-                <!--BOOK DETAIL START-->
-                <div class="lib-book-detail">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="kode-thumb">
-                                {% if book.picture is null %}
-                                    <img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt="">
-                                {% else %}
-                                    <img src="{{ asset( book.picture ) }}" alt="">
-                                {% endif %}
-                            </div>
+            <!--BOOK DETAIL START-->
+            <div class="lib-book-detail">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="kode-thumb">
+                            {% if book.picture is null %}
+                                <img src="{{ asset("assets/front/images/cover-1.jpg") }}" alt="">
+                            {% else %}
+                                <img src="{{ asset( book.picture ) }}" alt="">
+                            {% endif %}
                         </div>
-                        <div class="col-md-7">
-                            <div class="kode-text">
-                                <h2>{{ book.title }}</h2>
-                                <div class="book-text">
-                                    <p>
-                                        {{ book.summary }}
-                                    </p>
-                                </div>
-                                <div class="book-text">
-                                    <p>Category: Books.</p>
-                                    <p></p>
-                                    <p>Author: {{ book.author }}</p>
-                                    <p>Publisher: {{ book.editor }}</p>
-                                    <p>Product ID: {{ book.title }}</p>
-                                </div>
-                                <a href="#" class="add-to-cart">Add To Wishlist</a>
-                                <a href="#" class="add-to-cart">Get a Quote</a>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="kode-text">
+                            <h2>{{ book.title }}</h2>
+                            <div class="book-text">
+                                <p>
+                                    {{ book.summary }}
+                                </p>
                             </div>
+                            <div class="book-text">
+                                <p>Category: Books.</p>
+                                <p></p>
+                                <p>Author: {{ book.author }}</p>
+                                <p>Publisher: {{ book.editor }}</p>
+                                <p>Product ID: {{ book.title }}</p>
+                            </div>
+                            <a href="#" class="add-to-cart">Add To Wishlist</a>
+                            <a href="#" class="add-to-cart">Get a Quote</a>
                         </div>
                     </div>
                 </div>
-                <!--BOOK DETAIL END-->
-                <section>
-                    <div class="container">
-                        <div class="section-heading-1">
-                            <div class="kode-icon"><i class="fa fa-book"></i></div>
-                        </div>
-
-                        {% include "@static_books/"~ book.title~".html" %}
-
-                        {#<div class="bb-custom-wrapper">#}
-                            {#<div id="bb-bookblock" class="bb-bookblock">#}
-
-                                {##}
-
-                                {#<div class="bb-item">#}
-                                    {#<div class="bb-custom-side">#}
-                                        {#<h3>Chepter 9</h3>#}
-                                        {#<p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>#}
-                                    {#</div>#}
-                                    {#<div class="bb-custom-side">#}
-                                        {#<h3>Chepter 10</h3>#}
-                                        {#<p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p><p>Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie. Pastry bear claw oat cake danish croissant jujubes danish. Wypas soufflé muffin. Liquorice powder pastry danish. Candy toffee gummi bears chocolate bar lollipop applicake chocolate cake danish brownie.</p>#}
-                                    {#</div>#}
-                                {#</div>#}
-                            {#</div>#}
-
-                            {#<nav>#}
-                                {#<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>#}
-                                {#<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>#}
-                            {#</nav>#}
-                        {#</div>#}
-                    </div>
-                </section>
-                <!--RELATED PRODUCTS START-->
-                <div class="lib-related-products">
-                    <h2>Related Books</h2>
-                    <div class="row">
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img src="{{ asset("assets/front/images/cover-4.jpg") }}" alt="">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Burnt Siena</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Art History Mystery</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Sara Wisseman</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img src="{{ asset("assets/front/images/cover-2.jpg") }}" alt="">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Chrysalis</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>The Brave Girl</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>William S.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="{{ asset("assets/front/images/cover-4.jpg") }}">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Dead Water</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Dead Water in the Sea</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Ann Grannger   jzshbsjeinf</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                    </div>
-                </div>
-                <!--RELATED PRODUCTS END-->
             </div>
+            <!--BOOK DETAIL END-->
+            <section>
+                <div class="container">
+                    <div class="section-heading-1">
+                        <div class="kode-icon"><i class="fa fa-book"></i></div>
+                    </div>
+
+                    {% include "@static_books/"~ book.title~".html" %}
+
+                </div>
+            </section>
         </div>
     </div>
-    <footer class="footer-3">
+
+    <footer class="footer-2">
         <div class="container">
-            <div class="row">
-                <!--CATEGORY WIDGET START-->
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget widget-categories">
-                        <h2>Information</h2>
-                        <ul>
-
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Terms of use</a></li>
-                            <li><a href="#">Sitemap</a></li>
-                        </ul>
-                    </div>
+            <div class="lib-copyrights">
+                <p>Copyrights © 2017-18 GutenBook. All rights reserved</p>
+                <div class="social-icon">
+                    <ul>
+                        <li><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Tumblr"><i class="fa fa-tumblr"></i></a></li>
+                    </ul>
                 </div>
-                <!--CATEGORY WIDGET END-->
-                <!--LATEST NEWS WIDGET START-->
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget widget-latest-news">
-                        <h2>Lates News</h2>
-                        <ul>
-                            <li>
-                                <div class="kode-thumb"><a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a></div>
-                                <div class="kode-text">
-                                    <p>Phasellus risusa Aliowm</p>
-                                    <p>14 December 2015</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="kode-thumb"><a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a></div>
-                                <div class="kode-text">
-                                    <p>Phasellus risusa Aliowm</p>
-                                    <p>14 December 2015</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="kode-thumb"><a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a></div>
-                                <div class="kode-text">
-                                    <p>Phasellus risusa Aliowm</p>
-                                    <p>14 December 2015</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="kode-thumb"><a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a></div>
-                                <div class="kode-text">
-                                    <p>Phasellus risusa Aliowm</p>
-                                    <p>14 December 2015</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--LATEST NEWS WIDGET END-->
-                <!--TWITTER WIDGET START-->
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget widget-flickr">
-                        <h2>Flickr Gallery </h2>
-                        <ul>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg")}}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{{ asset("assets/front/images/canva.jpg") }}" alt=""></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--TWITTER WIDGET END-->
-
-                <!--NEWSLETTER START-->
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget widget-contact-info">
-                        <h2>get in touch</h2>
-                        <ul>
-                            <li>
-                                <i class="fa fa-paper-plane"></i>
-                                <div class="kode-text">
-                                    <h4>Address</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. </p>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <div class="kode-text">
-                                    <h4>phone Number</h4>
-                                    <p>+55(62) 55258-4570</p>
-                                    <p>+55(62) 55258-4570</p>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope-o"></i>
-                                <div class="kode-text">
-                                    <h4>Email Address</h4>
-                                    <a href="#">Info@thelibrary.com</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--NEWSLETTER START END-->
+            </div>
+            <div class="back-to-top">
+                <a href="#home"><i class="fa fa-angle-up"></i></a>
             </div>
         </div>
     </footer>
+
     <div class="copyrights">
         <div class="container">
             <p>Copyrights © 2015-16 KodeForest. All rights reserved</p>
