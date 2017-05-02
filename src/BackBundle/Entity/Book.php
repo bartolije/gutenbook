@@ -98,6 +98,7 @@ class Book
 
     public function __construct()
     {
+        $this->token = substr(uniqid(rand(), true), 8, 8);
         $this->createdAt = new \DateTime('now');
     }
 
