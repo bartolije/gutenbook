@@ -30,23 +30,25 @@
                 <div class="row">
 
                     {% for book in books %}
-                            <div class="col-md-4 col-sm-6">
-                                <div class="books-listing-4">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/book.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3><a href="#">{{ book.title }}</a></h3>
-                                        <p>{{ book.summary }}</p>
-                                    </div>
-                                    <div class="book-price">
-                                        <div class="rating">
-                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="add-to-cart">Lire le livre</a>
+                        <div class="col-md-3 col-md-offset-1">
+                            <div class="best-seller-pro">
+                                <figure>
+                                    <img src="{{ asset("assets/front/images/book5.png") }}" alt="">
+                                </figure>
+                                <div class="kode-text">
+                                    <h3><a href="#">{{ book.title }}</a></h3>
+                                    <label>Author</label>
                                 </div>
+                                <div class="kode-caption">
+                                    <h3>{{ book.summary }}</h3>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                    <a href="#" class="add-to-cart">Add to Librarie</a>
+                                </div>
+                                <label class="add-to-cart">{{ book.author }}</label>
                             </div>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
