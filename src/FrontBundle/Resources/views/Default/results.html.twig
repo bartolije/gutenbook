@@ -1,0 +1,58 @@
+{% extends "FrontBundle::base.html.twig" %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+
+                <div class="widget widget-categories">
+                    <h2>Themes</h2>
+                    {% for theme in themes %}
+                        <ul>
+                            <li><a href="{{ path('search_results', {'theme': theme.id}) }}">{{ theme.name }}</a></li>
+                        </ul>
+                    {% endfor %}
+                </div>
+
+                <div class="widget widget-categories">
+                    <h2>Categories</h2>
+                    {% for category in categories %}
+                        <ul>
+                            <li><a href="{{ path('search_results', {'category': category.id}) }}">{{ category.name }}</a></li>
+                        </ul>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    {% for book in books %}
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="best-seller-pro">
+                                <figure>
+                                    <a href="{{ path('read_book', {'token': book.token}) }}">
+                                        <img src="{{ asset('assets/front/images/book-default-cover.jpg') }}" alt="">
+                                    </a>
+                                </figure>
+                                <div class="kode-text">
+                                    <h3>
+                                        <a href="{{ path('read_book', {'token': book.token}) }}">
+                                            {{ book.title }}
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="kode-caption">
+                                    <h3>{{ book.title }}</h3>
+                                    <a href="{{ path('read_book', {'token': book.token}) }}" class="add-to-cart">Read the book</a>
+                                </div>
+                                <label class="add-to-cart">{{ book.author }}</label>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

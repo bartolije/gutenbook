@@ -12,14 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class UserController extends Controller
 {
-    /**
-     * @Template()
-     * @Route("/", name="user_index")
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function indexAction()
-    {
-        return $this->render('@App/User/index.html.twig');
-    }
+
 
 }

@@ -220,11 +220,6 @@ header{
 .kode-navigation{
 	float:right;
 }
-.form{
-	position: relative;
-	display:inline-block;
-
-}
 .searchBar{
 	display: inline-block;
 	position: relative;
@@ -675,15 +670,15 @@ header{
 }
 .best-seller-pro{
 	float:left;
-	width:350px;
+	width:250px;
 	padding:30px;
 	background-color:#fff;
 	text-align:center;
 	position:relative;
 	overflow:hidden;
-	margin-bottom:30px;
+	margin-bottom:10px;
 	border:solid 1px #f0f0f0;
-	height:550px;
+	height:450px;
 }
 .best-seller-pro figure{
 	float:left;
@@ -694,7 +689,7 @@ header{
 .best-seller-pro figure img{
 	float:left;
 	width: 100%;
-	height:400px;
+	height:300px;
 }
 
 .best-seller-pro h3{
@@ -6520,6 +6515,27 @@ section .kd-tab-2{margin-bottom:30px;float:left;width:100%;}
 	float:left;
 	width:460px;
 }
+
+.kode-author-detail-2 .container .kode-thumb .user-img {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+
+}
+
+ .book-released .item .book-released{
+
+	height: 300px;
+
+
+}
+
+.book-released .kode-thumb .book-img{
+
+	/*height: 200px;*/
+
+}
+
 .kode-author-detail-2 .kode-text{
 	padding:0px 0px 0px 490px;
 }

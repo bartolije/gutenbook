@@ -46,6 +46,8 @@
         <link href="{{ asset("assets/front/css/responsive.css") }}" rel="stylesheet">
         <!-- Component -->
         <link href="{{ asset("assets/front/js/dl-menu/component.css") }}" rel="stylesheet">
+        <!-- confirm -->
+        <link href="{{ asset("assets/front/css/jquery-confirm.min.css") }}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset("assets/front/css/bookblock.css") }}" />
     {% endblock %}
 </head>
@@ -186,9 +188,25 @@
     <script src="{{ asset("assets/front/js/jquerypp.custom.js") }}"></script>
     <script src="{{ asset("assets/front/js/jquery.bookblock.js") }}"></script>
     <script src="{{ asset("assets/front/js/functions.js") }}"></script>
+    <script src="{{ asset("assets/front/js/jquery-confirm.min.js") }}"></script>
     <script src="{{ asset("back/assets/js/vendor.js") }}"></script>
     <script src="{{ asset("back/assets/js/plugins.js") }}"></script>
     <script src="{{ asset("back/assets/js/main.js") }}"></script>
+    <script>
+        $('a.delete').confirm({
+            content: "Voulez-vous supprimer cet élément ?",
+        });
+        $('a.delete').confirm({
+            buttons: {
+                confirmer: function(){
+                    location.href = this.$target.attr('href');
+                },
+                annuler: function(){
+
+                }
+            }
+        });
+        </script>
 {% endblock %}
 <!-- Scripts -->
 

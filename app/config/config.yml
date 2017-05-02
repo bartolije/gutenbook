@@ -40,6 +40,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    paths:
+        "%kernel.root_dir%/Resources/Ebooks/html/": static_books
 
 # Doctrine Configuration
 doctrine:

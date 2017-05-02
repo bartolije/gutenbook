@@ -1,10 +1,160 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/*
+==========================================
+				CUSTOMIZED PAGE CSS
+==========================================
+*/
+#drag-me::before {
+    content: "#" attr(id);
+    font-weight: bold;
+}
+
+#outer-dropzone {
+    height: 800px;
+    background-color: #ccc;
+
+}
+
+#inner-dropzone {
+    height: 740px;
+    background-color: white;
+
+}
+
+.dropzone {
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 80%;
+    transition: background-color 0.3s;
+}
+
+.drop-active {
+    border-color: #aaa;
+}
+
+.drop-target {
+    background-color: #FF9606;
+    border-color: #fff;
+    border-style: solid;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    /*background-color: #29e;*/
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+
+    transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+    color: #000;
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.resize-drag {
+    background-color: #FF9606;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+
+    width: 140px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
+
+.resize-container {
+    width: 100%;
+    height: 140px;
+}
 
 /*
 ==========================================
 				LOGIN CSS
 ==========================================
 */
+._remember_me {
+    margin-top: 10px;
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.remember_label {
+    padding-left: 20px;
+
+}
+
+._remember_me-checkbox {
+    display: none;
+}
+._remember_me-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 0 solid #FF9606; border-radius: 20px;
+}
+._remember_me-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+
+    color: #fff;
+    /*background-color: #29e;*/
+    border: solid 2px #fff;
+
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    transition: background-color 0.3s;
+}
+._remember_me-inner:before, ._remember_me-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+._remember_me-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #FF9606; color: #FFFFFF;
+}
+._remember_me-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE;
+    color: #FF9606;
+    text-align: right;
+}
+._remember_me-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 0 solid  #FF9606; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+._remember_me-checkbox:checked + ._remember_me-label ._remember_me-inner {
+    margin-left: 0;
+}
+._remember_me-checkbox:checked + ._remember_me-label ._remember_me-switch {
+    right: 0px;
+}
 
 .login-page {
     width: 360px;
@@ -64,7 +214,6 @@
 .container {
     position: relative;
     z-index: 1;
-    /*max-width: 300px;*/
     margin: 0 auto;
 }
 .container:before, .container:after {
@@ -95,95 +244,24 @@
     color: #EF3B3A;
 
 
-<<<<<<< HEAD
 .login-page .form-login-div .login-form .check{
     display:none;
 }
 
+#remember_me {
+    float: left;
+}
+
 /* USER PROFILE PAGE */
-.card {
-    margin-top: 20px;
-    padding: 30px;
-    background-color: rgba(214, 224, 226, 0.2);
-    -webkit-border-top-left-radius:5px;
-    -moz-border-top-left-radius:5px;
-    border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
-    -moz-border-top-right-radius:5px;
-    border-top-right-radius:5px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.card.hovercard {
-    position: relative;
-    padding-top: 0;
-    overflow: hidden;
-    text-align: center;
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 1);
-}
-.card.hovercard .card-background {
-    height: 130px;
-}
-.card-background img {
-    -webkit-filter: blur(25px);
-    -moz-filter: blur(25px);
-    -o-filter: blur(25px);
-    -ms-filter: blur(25px);
-    filter: blur(25px);
-    margin-left: -100px;
-    margin-top: -200px;
-    min-width: 130%;
-}
-.card.hovercard .useravatar {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    right: 0;
-}
-.card.hovercard .useravatar img {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.5);
-}
-.card.hovercard .card-info {
-    position: absolute;
-    bottom: 14px;
-    left: 0;
-    right: 0;
-}
-.card.hovercard .card-info .card-title {
-    padding:0 5px;
-    font-size: 20px;
-    line-height: 1;
-    color: #262626;
-    background-color: rgba(255, 255, 255, 0.1);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
-.card.hovercard .card-info {
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 20px;
-    color: #737373;
-    text-overflow: ellipsis;
-}
-.card.hovercard .bottom {
-    padding: 0 20px;
-    margin-bottom: 17px;
-}
-.btn-pref .btn {
-    -webkit-border-radius:0 !important;
+
+.kode-author-detail-2 .kode-thumb a #user_image{
+    height: 60px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1cec76103cdf38c095b9c83382e6896f1299f88e
 /*
 ==========================================
 				RESETTING CSS
@@ -209,7 +287,7 @@
 .form-reset input {
     font-family: "Roboto", sans-serif;
     outline: 0;
-    background: orange;
+    background: #f2f2f2;
     width: 100%;
     border: 0;
     margin: 0 0 15px;
@@ -277,4 +355,110 @@
 }
 .container .info span .fa {
     color: #EF3B3A;
+}
+/*
+==========================================
+				MENU CSS
+==========================================
+*/
+.kode-connexion, .kode-connexion ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.kode-connexion{
+    float:right;
+}
+.kode-connexion li{
+    display:inline-block;
+    position:relative;
+}
+.kode-connexion ul {
+    position: absolute;
+    z-index: 2;
+    max-height:0;
+    left:0;
+    right: 0;
+    overflow:hidden;
+    -moz-transition: .6s all .2s;
+    -webkit-transition: .6s all .2s;
+    transition: .6s all .2s;
+}
+.kode-connexion li:hover ul {
+    max-height:15em;
+    text-align:center;
+}
+.kode-connexion:hover, .kode-connexion ul li {
+    background: orange;
+}
+.search-form{
+    margin-right: 10px !important;
+    float: right !important;
+}
+
+/*
+==========================================
+				ADMIN TABLE CSS
+==========================================
+*/
+
+.new_button{
+    color:black;
+    font-weight: bold;
+
+}
+
+.table-category tr td, .table-category tr th{
+    text-align: center;
+    border-style:solid;
+    border-color:orange;
+    border-width:0px 0px 1px 0px;
+    color:black
+}
+
+.table-category tr th{
+    background-color: orange;
+}
+
+/*
+==========================================
+				ADMIN NEW / EDIT CSS
+==========================================
+*/
+.new_edit {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.book_box{
+    text-align:center;
+}
+/*
+===========================================
+            Search CSS
+===========================================
+*/
+.search_list{
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #999;
+    background-color: #444;
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control{
+    border-radius: 0px; !important;
 }
