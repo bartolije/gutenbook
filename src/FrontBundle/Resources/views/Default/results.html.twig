@@ -30,25 +30,23 @@
                 <div class="row">
 
                     {% for book in books %}
-                            <div class="col-md-4 col-sm-6">
-                                <div class="books-listing-4">
-                                    <div class="kode-thumb">
-                                        <a href="{{ path('read_book', {'token': book.token}) }}">
-                                            <img src="{{ asset('assets/front/images/book-default-cover.jpg') }}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3><a href="#">{{ book.title }}</a></h3>
-                                        <p>{{ book.summary }}</p>
-                                    </div>
-                                    <div class="book-price">
-                                        <div class="rating">
-                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="add-to-cart">Lire le livre</a>
+                        <div class="col-md-3 col-md-offset-1">
+                            <div class="best-seller-pro">
+                                <figure>
+                                    <a href="{{ path('read_book', {'token': book.token}) }}">
+                                        <img src="{{ asset('assets/front/images/book-default-cover.jpg') }}" alt="">
+                                    </a>
+                                </figure>
+                                <div class="kode-text">
+                                    <h3><a href="{{ path('read_book', {'token': book.token}) }}">{{ book.title }}</a></h3>
                                 </div>
+                                <div class="kode-caption">
+                                    <h3>{{ book.summary }}</h3>
+                                    <a href="#" class="add-to-cart">Add to Librarie</a>
+                                </div>
+                                <label class="add-to-cart">{{ book.author }}</label>
                             </div>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
