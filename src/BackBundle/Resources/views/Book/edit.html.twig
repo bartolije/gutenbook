@@ -4,10 +4,8 @@
     <div class="row">
         <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-1 col-lg-6 col-md-6 col-sm-10">
             <div class="new_edit">
-                {{ form_start(form) }}
-                <div class="form-group">
-                    <h3>Edit Book</h3>
-                </div>
+                {{ form_start(form , {'attr': {'class': 'form-horizontal'}})}}
+                    <h1>Edit Book</h1>
                 <div class="form-group">
                         <label>Title</label>
                         {{ form_widget(form.title, {'attr':{'placeholder':'Title'}}) }}
@@ -39,7 +37,7 @@
                     <label>Publication Date</label>
                     {{ form_widget(form.publishedAt) }}
                 </div>
-                <div class="form-group">
+                <div class="input-group center-block col-md-4">
                     {{ form_widget(form.save) }}
                 </div>
                 {{ form_rest(form) }}
