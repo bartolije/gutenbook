@@ -16,19 +16,8 @@
                                     <li><a href="{{ path('front_default_index') }}">Home</a></li>
 
                                     <li><a href="{{ path('front_default_index') }}">About Us</a></li>
-                                    <li><a href="{{ path('front_default_index') }}">Our Books</a>
-                                        <ul>
-                                            <li><a href="{{ path('front_default_index') }}">Book With Sidebar</a></li>
-                                            <li><a href="{{ path('front_default_index') }}">Book Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{{ path('front_default_index') }}">Blog</a>
-                                        <ul>
-                                            <li><a href="{{ path('front_default_index') }}">Blog 2 Column</a></li>
-                                            <li><a href="{{ path('front_default_index') }}">Blog Full</a></li>
-                                            <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="{{ path('search_results') }}">Our Books</a></li>
+                                    <li><a href="{{ path('front_default_index') }}">Blog</a></li>
                                     {% if is_granted('ROLE_USER') %}
                                         <li><a href="#">{{ app.user.username }}</a>
                                             <ul>
@@ -65,19 +54,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{ path('front_default_index') }}">About Us</a></li>
-                                <li class="menu-item kode-parent-menu"><a href="{{ path('front_default_index') }}">Our Books</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="{{ path('front_default_index') }}">Book With Sidebar</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">Book Detail</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item kode-parent-menu"><a href="{{ path('front_default_index') }}">Blog</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="{{ path('front_default_index') }}">Blog 2 Column</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">Blog Full</a></li>
-                                        <li><a href="{{ path('front_default_index') }}">Blog Detail</a></li>
-                                    </ul>
-                                </li>
+                                <li class="menu-item kode-parent-menu"><a href="{{ path('search_results') }}">Our Books</a></li>
+                                <li class="menu-item kode-parent-menu"><a href="{{ path('front_default_index') }}">Blog</a></li>
                                 {% if is_granted('ROLE_USER') %}
                                     <li class="menu-item kode-parent-menu"><a href="#">{{ app.user.username }}</a>
                                         <ul class="dl-submenu">
