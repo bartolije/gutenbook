@@ -28,7 +28,7 @@
             <div class="col-md-9">
                 <div class="row">
                     {% for book in books %}
-                        <div class="col-md-4 col-md-offset-1">
+                        <div class="col-md-4">
                             <div class="best-seller-pro">
                                 <figure>
                                     <a href="{{ path('read_book', {'token': book.token}) }}">

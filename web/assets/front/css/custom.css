@@ -242,7 +242,7 @@
 }
 .container .info span .fa {
     color: #EF3B3A;
-}
+
 
 .login-page .form-login-div .login-form .check{
     display:none;
@@ -258,6 +258,10 @@
     height: 60px;
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1cec76103cdf38c095b9c83382e6896f1299f88e
 /*
 ==========================================
 				RESETTING CSS
